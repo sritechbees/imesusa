@@ -4,6 +4,7 @@ import Header from "@/component/layout/header";
 import HeaderHero from "@/component/layout/header";
 import HeroSection from "@/component/home/herosection";
 import WhyIMES from "@/component/home/why_imesusa";
+import Footer from "@/component/layout/footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -21,6 +22,7 @@ export default function Home() {
   <Header/>
   <HeroSection/>
   <WhyIMES/>
+  <Footer/>
     </div>
   );
 }

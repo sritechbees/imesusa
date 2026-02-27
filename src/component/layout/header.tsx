@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 
 export default function Header() {
@@ -7,33 +9,35 @@ export default function Header() {
         
         {/* Logo */}
         <div>
-          <h1 className="text-2xl font-bold tracking-wide bg-gradient-to-r from-pink-600 to-rose-500 bg-clip-text text-transparent">
-            iMESUSA
-          </h1>
-          <p className="text-xs text-gray-500">
-            International Medical Equipment Solution
-          </p>
+          <Link href="/" className="hover:text-pink-600 transition">
+            <h1 className="text-2xl font-bold tracking-wide bg-gradient-to-r from-pink-600 to-rose-500 bg-clip-text text-transparent">
+              iMESUSA
+            </h1>
+            <p className="text-xs text-gray-500">
+              International Medical Equipment Solution
+            </p>
+          </Link>
         </div>
 
         {/* Navigation */}
         <nav className="hidden md:flex space-x-8 font-medium text-gray-700">
-          <Link href="#about" className="hover:text-pink-600 transition">
+          <Link href="/about/aboutsection" className="hover:text-pink-600 transition">
             About
           </Link>
-          <Link href="#products" className="hover:text-pink-600 transition">
+          <Link href="/products/twoproductsection" className="hover:text-pink-600 transition">
             Products
           </Link>
-          <Link href="#resources" className="hover:text-pink-600 transition">
+          <Link href="/resources/resourcespages" className="hover:text-pink-600 transition">
             Resources
           </Link>
-          <Link href="#contact" className="hover:text-pink-600 transition">
+          <Link href="/contact/getintouch" className="hover:text-pink-600 transition">
             Contact
           </Link>
         </nav>
 
         {/* CTA Button */}
         <Link
-          href="#contact"
+          href="/contact/inquiryform"
           className="hidden md:inline-block bg-gradient-to-r from-pink-600 to-rose-500 text-white px-6 py-2 rounded-full font-medium shadow-lg hover:scale-105 transition duration-300"
         >
           Inquiry

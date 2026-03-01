@@ -1,66 +1,114 @@
-import Link from "next/link";
+"use client";
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
+
+const slides = [
+  {
+    id: 1,
+    title: "Advancing Meaningful Medical Innovation",
+    subtitle:
+      "Bridging Proven Korean Medical Technology with U.S. Healthcare Excellence.",
+    image: "/about/image1.jpg",
+  },
+  {
+    id: 2,
+    title: "Brain & Mental Wellness Technology",
+    subtitle:
+      "Non-invasive TMS solutions designed for modern MedSpa environments.",
+    image: "/about/tms.jpg",
+  },
+  {
+    id: 3,
+    title: "Advanced Electromagnetic Pain Therapy",
+    subtitle:
+      "Precision pain management solutions for clinics and physicians.",
+    image: "/about/image3.jpg",
+  },
+];
 
 export default function HeroSection() {
+  const [current, setCurrent] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % slides.length);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
-    <section className="pt-40 pb-24 bg-gradient-to-br from-pink-50 via-rose-50 to-fuchsia-100 relative overflow-hidden">
-      
-      {/* Background Glow Effects */}
-      <div className="absolute top-0 left-0 w-72 h-72 bg-pink-300/40 blur-3xl rounded-full"></div>
-      <div className="absolute bottom-0 right-0 w-72 h-72 bg-rose-400/30 blur-3xl rounded-full"></div>
+    <div className="relative w-full h-[600px] overflow-hidden">
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={slides[current].id}
+          initial={{ opacity: 0, scale: 1.05 }}
+          animate={{ opacity: 1, scale: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 1 }}
+          className="absolute inset-0"
+        >
+          {/* Next Image Full Cover */}
+          <Image
+            src={slides[current].image}
+            alt="Hero Background"
+            fill
+            priority
+            className="h-[450px]"
+          />
 
-      <div className="relative max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
-        
-        {/* Left Content */}
-        <div>
-          <h2 className="text-4xl md:text-5xl font-bold leading-tight mb-6 text-gray-800">
-            Meaningful Medical <br />
-            <span className="text-pink-600">
-              Technology That Makes a Difference
-            </span>
-          </h2>
+          {/* Overlay */}
+          <div className="absolute inset-0 bg-black/50"></div>
 
-          <p className="text-lg text-gray-600 mb-8">
-            We introduce clinically validated, high-quality medical devices
-            designed to enhance quality of life across U.S. healthcare and
-            wellness environments.
-          </p>
-
-          <div className="flex flex-wrap gap-4">
-            <Link
-              href="#products"
-              className="bg-pink-600 text-white px-6 py-3 rounded-full font-medium hover:bg-pink-700 transition"
+          {/* Content */}
+          <div className="relative z-10 flex flex-col justify-center items-center text-center h-full px-6">
+            <motion.h1
+              initial={{ y: 40, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ delay: 0.3 }}
+              className="text-white text-3xl md:text-5xl lg:text-6xl font-bold max-w-4xl"
             >
-              Explore Products
-            </Link>
+              {slides[current].title}
+            </motion.h1>
 
-            <Link
-              href="#contact"
-              className="border border-pink-600 text-pink-600 px-6 py-3 rounded-full font-medium hover:bg-pink-600 hover:text-white transition"
+            <motion.p
+              initial={{ y: 40, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ delay: 0.6 }}
+              className="text-gray-200 mt-6 text-lg md:text-xl max-w-2xl"
             >
-              Contact Us
-            </Link>
+              {slides[current].subtitle}
+            </motion.p>
+
+            <motion.div
+              initial={{ y: 40, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ delay: 0.9 }}
+              className="mt-8 flex gap-4"
+            >
+              <button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold transition">
+                Explore Products
+              </button>
+              <button className="border border-white text-white px-6 py-3 rounded-lg hover:bg-white hover:text-black transition">
+                Request Information
+              </button>
+            </motion.div>
           </div>
-        </div>
+        </motion.div>
+      </AnimatePresence>
 
-        {/* Right Card */}
-        <div className="bg-white/80 backdrop-blur-xl shadow-2xl rounded-3xl p-8 border border-pink-100">
-          <h3 className="text-2xl font-semibold mb-6 text-pink-600">
-            Our Commitment
-          </h3>
-
-          <ul className="space-y-4 text-gray-600">
-            <li>✔ Clinically Validated Technology</li>
-            <li>✔ Regulatory Awareness (FDA & Compliance)</li>
-            <li>✔ Practical for Clinics & Wellness Centers</li>
-            <li>✔ Safe & People-Centered Solutions</li>
-          </ul>
-
-          <p className="mt-6 text-sm text-gray-500">
-            Bridging Korean medical innovation with U.S. healthcare needs.
-          </p>
-        </div>
-
+      {/* Dots */}
+      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-3 z-20">
+        {slides.map((_, index) => (
+          <button
+            key={index}
+            onClick={() => setCurrent(index)}
+            className={`w-3 h-3 rounded-full ${
+              current === index ? "bg-white" : "bg-gray-400"
+            }`}
+          />
+        ))}
       </div>
-    </section>
+    </div>
   );
 }

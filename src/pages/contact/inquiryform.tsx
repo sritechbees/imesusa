@@ -30,7 +30,7 @@ export default function InquiryForm() {
 
             {/* Soft Overlay Card */}
             <div className="absolute bottom-6 left-6 bg-white/90 backdrop-blur-md p-6 rounded-2xl shadow-lg max-w-xs">
-              <h3 className="font-semibold text-blue-900">
+              <h3 className="font-semibold text-[#ea3571]">
                 Professional Support
               </h3>
               <p className="text-sm text-gray-600 mt-2">
@@ -45,7 +45,7 @@ export default function InquiryForm() {
             <div className="bg-white shadow-2xl rounded-3xl p-10 border border-blue-100">
 
               <div className="mb-8">
-                <h1 className="text-3xl font-bold text-gray-900">
+                <h1 className="text-3xl font-bold text-[#ea3571]">
                   Contact / Inquiry
                 </h1>
                 <p className="mt-3 text-gray-600">
@@ -81,7 +81,7 @@ export default function InquiryForm() {
                     <input
                       type="text"
                       required
-                      className="mt-2 w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-600 outline-none transition"
+                      className="mt-2 w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#ea3571] outline-none transition"
                     />
                   </div>
 
@@ -94,7 +94,7 @@ export default function InquiryForm() {
                       type="text"
                       placeholder="Hospital, Clinic, MedSpa, IPA, Health Planner..."
                       required
-                      className="mt-2 w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-600 outline-none transition"
+                      className="mt-2 w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#ea3571] outline-none transition"
                     />
                   </div>
 
@@ -105,7 +105,7 @@ export default function InquiryForm() {
                     </label>
                     <select
                       required
-                      className="mt-2 w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-600 outline-none transition"
+                      className="mt-2 w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#ea3571] outline-none transition"
                     >
                       <option value="">Select Role</option>
                       <option>Physician (MD / DO)</option>
@@ -125,7 +125,7 @@ export default function InquiryForm() {
                     <input
                       type="email"
                       required
-                      className="mt-2 w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-600 outline-none transition"
+                      className="mt-2 w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#ea3571] outline-none transition"
                     />
                   </div>
 
@@ -137,7 +137,7 @@ export default function InquiryForm() {
                     <input
                       type="tel"
                       required
-                      className="mt-2 w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-600 outline-none transition"
+                      className="mt-2 w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#ea3571] outline-none transition"
                     />
                   </div>
 
@@ -149,18 +149,19 @@ export default function InquiryForm() {
                     <textarea
                       rows={4}
                       required
-                      className="mt-2 w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-600 outline-none transition"
+                      className="mt-2 w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#ea3571] outline-none transition"
                     ></textarea>
                   </div>
 
                   {/* Submit */}
-                  <button
-                    type="submit"
-                    className="w-full py-3 bg-[#fea8c5] text-white rounded-xl font-medium shadow-md hover:bg-[#df6294] transition duration-300"
-                  >
-                    Submit Inquiry
-                  </button>
+                <button
+  type="submit"
+  className="relative w-full py-3 rounded-xl font-medium text-white bg-[#ea3571] overflow-hidden group"
+>
+  <span className="absolute inset-0 bg-[#10b243] transform scale-x-0 origin-left group-hover:scale-x-100 transition-transform duration-500 ease-in-out"></span>
 
+  <span className="relative z-10">Submit Inquiry</span>
+</button>
                 </form>
               )}
 

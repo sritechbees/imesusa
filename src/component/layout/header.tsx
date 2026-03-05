@@ -1,48 +1,128 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+import Image from "next/image";
 
 export default function Header() {
-  return (
-    <header className="w-full fixed top-0 z-50 backdrop-blur-md bg-white/70 border-b border-pink-100">
-      <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-        
-        {/* Logo */}
-        <div>
-          <Link href="/" className="hover:text-pink-600 transition">
-            <h1 className="text-2xl font-bold tracking-wide bg-gradient-to-r from-pink-600 to-rose-500 bg-clip-text text-transparent">
-              iMESUSA
-            </h1>
-            <p className="text-xs text-gray-500">
-              International Medical Equipment Solution
-            </p>
-          </Link>
-        </div>
 
-        {/* Navigation */}
-        <nav className="hidden md:flex space-x-8 font-medium text-gray-700">
-          <Link href="/about/aboutsection" className="hover:text-pink-600 transition">
-            About
-          </Link>
-          <Link href="/products/twoproductsection" className="hover:text-pink-600 transition">
-            Products
-          </Link>
-          <Link href="/resources/resourcespages" className="hover:text-pink-600 transition">
-            Resources
-          </Link>
-          <Link href="/contact/getintouch" className="hover:text-pink-600 transition">
-            Contact
-          </Link>
+  const [menuOpen, setMenuOpen] = useState(false);
+  const pathname = usePathname();
+
+  const navLinks = [
+    { name: "About", href: "/about/aboutsection" },
+    { name: "Products", href: "/products/twoproductsection" },
+    { name: "Resources", href: "/resources/resourcespages" },
+    { name: "Contact", href: "/contact/getintouch" },
+  ];
+
+  return (
+    <header className="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-gray-200">
+
+      <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+
+        {/* Logo */}
+     
+<Link href="/" className="flex items-center">
+  <Image
+    src="/about/logoo.png"   // place your logo in public/images
+    alt="iMESUSA Logo"
+    width={170}
+    height={70}
+    className="object-contain"
+    priority
+  />
+</Link>
+
+        {/* Desktop Navigation */}
+        <nav className="hidden md:flex items-center space-x-8 font-medium text-gray-700">
+
+          {navLinks.map((link) => (
+            <Link
+              key={link.name}
+              href={link.href}
+              className={`relative transition 
+              ${pathname === link.href
+                  ? "text-gray-900 font-semibold"
+                  : "hover:text-gray-900"
+                }`}
+            >
+              {link.name}
+
+              {/* Active underline */}
+              {pathname === link.href && (
+                <span className="absolute -bottom-2 left-0 w-full h-[2px] bg-gray-900"></span>
+              )}
+            </Link>
+          ))}
+
         </nav>
 
         {/* CTA Button */}
-        <Link
-          href="/contact/inquiryform"
-          className="hidden md:inline-block bg-gradient-to-r from-pink-600 to-rose-500 text-white px-6 py-2 rounded-full font-medium shadow-lg hover:scale-105 transition duration-300"
+       <div className="hidden md:flex items-center">
+  <Link
+    href="/Inquiry"
+    className="relative px-6 py-2.5 rounded-lg font-semibold text-white 
+    bg-[#007cd5] border border-[#007cd5] overflow-hidden group 
+    transition-all duration-500 hover:text-[#007cd5]"
+  >
+    {/* Hover Background Animation */}
+    <span className="absolute inset-0 bg-white transform scale-x-0 origin-left 
+    group-hover:scale-x-100 transition-transform duration-500 ease-out"></span>
+
+    {/* Button Text */}
+    <span className="relative z-10 tracking-wide">
+      Inquiry
+    </span>
+  </Link>
+</div>
+
+        {/* Mobile Menu Button */}
+        <button
+          onClick={() => setMenuOpen(!menuOpen)}
+          className="md:hidden flex flex-col gap-1"
         >
-          Inquiry
-        </Link>
+          <span className="w-6 h-[2px] bg-gray-900"></span>
+          <span className="w-6 h-[2px] bg-gray-900"></span>
+          <span className="w-6 h-[2px] bg-gray-900"></span>
+        </button>
+
       </div>
+
+      {/* Mobile Menu */}
+      {menuOpen && (
+        <div className="md:hidden bg-white border-t border-gray-200">
+
+          <div className="flex flex-col px-6 py-6 space-y-5 text-gray-700 font-medium">
+
+            {navLinks.map((link) => (
+              <Link
+                key={link.name}
+                href={link.href}
+                onClick={() => setMenuOpen(false)}
+                className={`transition ${
+                  pathname === link.href
+                    ? "text-gray-900 font-semibold"
+                    : "hover:text-gray-900"
+                }`}
+              >
+                {link.name}
+              </Link>
+            ))}
+
+            <Link
+              href="/Inquiry"
+              className="mt-3 inline-block text-center px-5 py-2 rounded-xl font-medium text-white bg-gray-900"
+            >
+              Inquiry
+            </Link>
+
+          </div>
+
+        </div>
+      )}
+
     </header>
   );
 }

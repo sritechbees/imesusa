@@ -42,7 +42,7 @@ export default function TwoProductHero() {
                 <li>✓ Non-Invasive & Safe</li>
                 <li>✓ Globally trusted system</li>
               </ul>
-<Link href="/products/tms_product">
+<Link href="/products/TMSOverview">
               <button className="mt-4 px-6 py-3 bg-blue-900 text-white rounded-lg hover:bg-blue-700 transition">
                 Learn More
               </button>
@@ -70,7 +70,7 @@ export default function TwoProductHero() {
                 <li>✓ Encourages recurring wellness programs</li>
                 <li>✓ Premium patient experience</li>
               </ul>
-<Link href="/products/salus_talentpro">
+<Link href="/products/Salus_Talentpro/herosection">
               <button className="mt-4 px-6 py-3 bg-blue-900 text-white rounded-lg hover:bg-blue-700 transition">
                 Explore Product
               </button></Link>

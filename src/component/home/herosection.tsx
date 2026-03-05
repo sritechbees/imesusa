@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 
 const slides = [
   {
@@ -86,12 +87,16 @@ export default function HeroSection() {
               transition={{ delay: 0.9 }}
               className="mt-8 flex gap-4"
             >
+              <Link href="/products/twoproductsection">
               <button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold transition">
                 Explore Products
               </button>
+              </Link>
+                    <Link href="/contact/inquiryform">
               <button className="border border-white text-white px-6 py-3 rounded-lg hover:bg-white hover:text-black transition">
                 Request Information
               </button>
+              </Link>
             </motion.div>
           </div>
         </motion.div>

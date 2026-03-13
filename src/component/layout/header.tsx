@@ -26,7 +26,7 @@ export default function Header() {
      
 <Link href="/" className="flex items-center">
   <Image
-    src="/about/logoo.png"   // place your logo in public/images
+    src="/about/logo2.png"   // place your logo in public/images
     alt="iMESUSA Logo"
     width={170}
     height={70}
@@ -62,10 +62,10 @@ export default function Header() {
         {/* CTA Button */}
        <div className="hidden md:flex items-center">
   <Link
-    href="/Inquiry"
+    href="/contact/inquiryform/"
     className="relative px-6 py-2.5 rounded-lg font-semibold text-white 
-    bg-[#007cd5] border border-[#007cd5] overflow-hidden group 
-    transition-all duration-500 hover:text-[#007cd5]"
+    bg-[#fd5da2] border border-[#df3b81] overflow-hidden group 
+    transition-all duration-500 hover:text-[#df3b81]"
   >
     {/* Hover Background Animation */}
     <span className="absolute inset-0 bg-white transform scale-x-0 origin-left 

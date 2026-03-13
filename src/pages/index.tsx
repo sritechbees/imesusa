@@ -8,8 +8,11 @@ import Footer from "@/component/layout/footer";
 import MissionSection from "@/component/home/MissionSection";
 import InnovationSection from "@/component/home/InnovationSection";
 import ProductsSection from "@/component/home/ProductsSection";
-import ResourcesSection from "@/component/home/ResourcesSection";
-import ContactCTA from "@/component/home/ContactCTA";
+import { OurCommitment } from "@/component/home/OurCommitment";
+
+import AboutIMESUSA from "@/component/home/aboutIMESUSA";
+import OurPhilosophy from "@/component/home/ourPhilosophy";
+import { ContactCTA } from "@/component/home/ContactCTA";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -26,13 +29,15 @@ export default function Home() {
     <div>
   <Header/>
   <HeroSection/>
-   <WhyIMES/>
+  <AboutIMESUSA/>
+  <OurPhilosophy/>
+   <WhyIMES/> 
   <MissionSection/>
   <InnovationSection/>
   <ProductsSection/>
-  <ResourcesSection/>
-  <ContactCTA/>
- 
+  <OurCommitment/>
+ <ContactCTA/>
+
   <Footer/>
     </div>
   );

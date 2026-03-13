@@ -1,43 +1,137 @@
-export default function InnovationSection() {
+"use client";
+
+import { motion } from "framer-motion";
+import Image from "next/image";
+
+export default function KoreanInnovationBridge() {
   return (
-    <section className="py-20 bg-gray-50">
-      <div className="max-w-6xl mx-auto px-6 text-center">
+    <section className="relative py-28 text-gray-300 overflow-hidden">
 
-        <h2 className="text-4xl font-bold mb-6">
-          Bridging Korean Medical Innovation
-        </h2>
+      {/* FULL BACKGROUND IMAGE */}
+      <div className="absolute inset-0 -z-10">
+        <Image
+          src="/about/medical innovation.jpg"
+          alt="Medical Technology Korea"
+          fill
+          priority
+          className="object-cover"
+        />
+        <div className="absolute inset-0 bg-slate-950/80"></div>
+      </div>
 
-        <p className="text-gray-600 max-w-3xl mx-auto mb-10">
-          Korea is one of the most advanced medical technology ecosystems
-          in the world. Our goal is to bridge proven Korean medical
-          innovation with the practical needs of clinics, wellness centers,
-          and healthcare providers in the United States.
-        </p>
+      {/* Glow Effects */}
+      <div className="absolute top-0 left-0 w-96 h-96 bg-[#fd5da2]/20 blur-3xl rounded-full animate-pulse"></div>
+      <div className="absolute bottom-0 right-0 w-96 h-96 bg-purple-500/20 blur-3xl rounded-full animate-pulse"></div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+      <div className="max-w-7xl mx-auto px-6 relative z-10">
 
-          <div className="bg-white p-6 rounded-xl shadow">
-            <h3 className="font-semibold text-xl mb-2">Clinically Validated</h3>
-            <p className="text-gray-600">
-              Technologies supported by clinical research and medical studies.
+        {/* Section Title */}
+        <motion.div
+          initial={{ opacity: 0, y: 60 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7 }}
+          className="text-center mb-20"
+        >
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+            Korean Innovation <span className="text-[#fd5da2]">Bridge</span>
+          </h2>
+
+          <p className="max-w-2xl mx-auto text-gray-400">
+            Connecting Korea’s advanced medical technology ecosystem with
+            the real-world needs of healthcare providers in the United States.
+          </p>
+        </motion.div>
+
+        {/* Main Grid */}
+        <div className="grid md:grid-cols-2 gap-14 items-center">
+
+          {/* IMAGE */}
+          <motion.div
+            initial={{ opacity: 0, x: -80 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            className="relative"
+          >
+            <Image
+              src="/about/medical innovation.jpg"
+              alt="Korean Medical Technology"
+              width={650}
+              height={420}
+              className="rounded-2xl shadow-2xl hover:scale-105 transition duration-500"
+            />
+
+            {/* small glow */}
+            <div className="absolute -bottom-6 -left-6 w-24 h-24 bg-[#fd5da2]/40 blur-2xl rounded-full"></div>
+          </motion.div>
+
+          {/* TEXT */}
+          <motion.div
+            initial={{ opacity: 0, x: 80 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <h3 className="text-2xl font-semibold text-white mb-4">
+              Bridging Innovation with Healthcare
+            </h3>
+
+            <p className="text-gray-400 mb-6 leading-relaxed">
+              Korea is one of the most advanced medical technology ecosystems
+              in the world. Our goal is to bring proven Korean innovation to
+              clinics, hospitals, MedSpas, and healthcare providers in the
+              United States.
             </p>
-          </div>
 
-          <div className="bg-white p-6 rounded-xl shadow">
-            <h3 className="font-semibold text-xl mb-2">Safe & Practical</h3>
-            <p className="text-gray-600">
-              Designed for real-world clinical use and patient safety.
+            <p className="text-gray-400 leading-relaxed">
+              We carefully curate technologies that deliver real clinical value,
+              ensuring they are practical, safe, and beneficial for both
+              healthcare professionals and patients.
             </p>
-          </div>
 
-          <div className="bg-white p-6 rounded-xl shadow">
-            <h3 className="font-semibold text-xl mb-2">Life Improving</h3>
-            <p className="text-gray-600">
-              Focused on improving patient wellbeing and outcomes.
-            </p>
-          </div>
+            {/* Feature Cards */}
+            <div className="grid grid-cols-2 gap-5 mt-8">
+
+              <div className="bg-white/5 backdrop-blur-xl border border-[#fd5da2]/20 rounded-xl p-4 hover:scale-105 hover:border-[#fd5da2] transition">
+                <h4 className="text-white font-semibold text-sm mb-1">
+                  Advanced Innovation
+                </h4>
+                <p className="text-xs text-gray-400">
+                  Access cutting-edge Korean medical technologies.
+                </p>
+              </div>
+
+              <div className="bg-white/5 backdrop-blur-xl border border-[#fd5da2]/20 rounded-xl p-4 hover:scale-105 hover:border-[#fd5da2] transition">
+                <h4 className="text-white font-semibold text-sm mb-1">
+                  Clinical Value
+                </h4>
+                <p className="text-xs text-gray-400">
+                  Solutions designed to improve real healthcare outcomes.
+                </p>
+              </div>
+
+              <div className="bg-white/5 backdrop-blur-xl border border-[#fd5da2]/20 rounded-xl p-4 hover:scale-105 hover:border-[#fd5da2] transition">
+                <h4 className="text-white font-semibold text-sm mb-1">
+                  Practical Use
+                </h4>
+                <p className="text-xs text-gray-400">
+                  Technologies suitable for clinics and wellness centers.
+                </p>
+              </div>
+
+              <div className="bg-white/5 backdrop-blur-xl border border-[#fd5da2]/20 rounded-xl p-4 hover:scale-105 hover:border-[#fd5da2] transition">
+                <h4 className="text-white font-semibold text-sm mb-1">
+                  Trusted Solutions
+                </h4>
+                <p className="text-xs text-gray-400">
+                  Carefully selected devices with proven value.
+                </p>
+              </div>
+
+            </div>
+
+          </motion.div>
 
         </div>
+
       </div>
     </section>
   );

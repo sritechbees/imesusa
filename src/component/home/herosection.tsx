@@ -35,11 +35,13 @@ export default function HeroSection() {
     const interval = setInterval(() => {
       setCurrent((prev) => (prev + 1) % slides.length);
     }, 5000);
+
     return () => clearInterval(interval);
   }, []);
 
   return (
-    <div className="relative w-full h-[600px] overflow-hidden">
+    <section className="relative w-full h-[80vh] md:h-[90vh] overflow-hidden">
+
       <AnimatePresence mode="wait">
         <motion.div
           key={slides[current].id}
@@ -49,25 +51,27 @@ export default function HeroSection() {
           transition={{ duration: 1 }}
           className="absolute inset-0"
         >
-          {/* Next Image Full Cover */}
+
+          {/* Background Image */}
           <Image
             src={slides[current].image}
             alt="Hero Background"
             fill
             priority
-            className="h-[450px]"
+            className="object-cover"
           />
 
           {/* Overlay */}
-          <div className="absolute inset-0 bg-black/50"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/70"></div>
 
           {/* Content */}
           <div className="relative z-10 flex flex-col justify-center items-center text-center h-full px-6">
+
             <motion.h1
               initial={{ y: 40, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.3 }}
-              className="text-white text-3xl md:text-5xl lg:text-6xl font-bold max-w-4xl"
+              className="text-white text-3xl md:text-5xl lg:text-6xl font-bold max-w-4xl leading-tight"
             >
               {slides[current].title}
             </motion.h1>
@@ -81,39 +85,45 @@ export default function HeroSection() {
               {slides[current].subtitle}
             </motion.p>
 
+            {/* Buttons */}
             <motion.div
               initial={{ y: 40, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.9 }}
-              className="mt-8 flex gap-4"
+              className="mt-10 flex flex-wrap justify-center gap-5"
             >
+
               <Link href="/products/twoproductsection">
-              <button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold transition">
-                Explore Products
-              </button>
+                <button className="bg-[#fd5da2] hover:bg-pink-500 text-white px-8 py-3 rounded-full font-semibold transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-pink-500/40">
+                  Explore Products
+                </button>
               </Link>
-                    <Link href="/contact/inquiryform">
-              <button className="border border-white text-white px-6 py-3 rounded-lg hover:bg-white hover:text-black transition">
-                Request Information
-              </button>
+
+              <Link href="/contact/inquiryform">
+                <button className="border border-white text-white px-8 py-3 rounded-full hover:bg-white hover:text-[#fd5da2] transition-all duration-300 hover:scale-105">
+                  Request Information
+                </button>
               </Link>
+
             </motion.div>
+
           </div>
         </motion.div>
       </AnimatePresence>
 
-      {/* Dots */}
-      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-3 z-20">
+      {/* Slider Dots */}
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-3 z-20">
         {slides.map((_, index) => (
           <button
             key={index}
             onClick={() => setCurrent(index)}
-            className={`w-3 h-3 rounded-full ${
-              current === index ? "bg-white" : "bg-gray-400"
+            className={`w-3 h-3 rounded-full transition ${
+              current === index ? "bg-[#fd5da2] scale-125" : "bg-gray-400"
             }`}
           />
         ))}
       </div>
-    </div>
+
+    </section>
   );
 }

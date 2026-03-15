@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export default function SalusTalentPro() {
   return (
-    <App_layout>
+    
       <section className="relative w-full bg-gradient-to-br from-slate-50 via-white to-blue-50 py-24 px-6 md:px-16 font-[Poppins] overflow-hidden">
 
         {/* Soft AI Background Glow */}
@@ -122,6 +122,6 @@ export default function SalusTalentPro() {
 
         </div>
       </section>
-    </App_layout>
+    
   );
 }

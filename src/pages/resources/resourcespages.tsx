@@ -1,195 +1,144 @@
 "use client";
 
-import App_layout from "@/component/layout/app_layout";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import DoctorTestimonials from "./DoctorTestimonials";
+import App_layout from "@/component/layout/app_layout";
+import ResourcesHeroSection from "./resouceshero";
+import DownloadBrochures from "./downloadbrochures";
+import FDACompliance from "./fda";
 import TechnologyTimeline from "./TechnologyTimeline";
-import ClinicalStats from "./ClinicalStats";
+import DoctorTestimonials from "./DoctorTestimonials";
 
-export default function ResourcesPage() {
+type VideoType = {
+  id: number;
+  title: string;
+  thumbnail: string;
+  video: string;
+};
+
+export default function ProductVideos() {
+
+  const [mounted, setMounted] = useState(false);
+  const [activeVideo, setActiveVideo] = useState<string | null>(null);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) return null;
+
+  const videos: VideoType[] = [
+    {
+      id: 1,
+      title: "Electromagnetic Stimulation",
+      thumbnail: "/about/product2.png",
+      video: "/videos/SALUS_TALENT_PRO.mp4",
+    },
+    {
+      id: 2,
+      title: "TMS Technology",
+      thumbnail: "/about/tms.jpg",
+      video: "/videos/ALTMS.mp4",
+    },
+  ];
+
   return (
-    <App_layout>
-      <section className="relative py-28 bg-gradient-to-br from-slate-50 via-blue-50 to-white font-[Poppins] overflow-hidden">
+   
+   
 
-        {/* Background Glow */}
-        <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-blue-300 blur-[140px] opacity-30"></div>
-        <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-cyan-300 blur-[140px] opacity-30"></div>
 
-        <div className="relative max-w-7xl mx-auto px-6 space-y-24">
+    <div className="space-y-14">
 
-          {/* HEADER */}
+      {/* Section Title */}
+      <div className="text-center">
+        <h2 className="text-3xl md:text-4xl font-bold text-slate-900">
+          Product Demonstration Videos
+        </h2>
+
+        <p className="mt-4 text-gray-600 max-w-2xl mx-auto">
+          Watch demonstration videos of our advanced medical technologies,
+          including electromagnetic stimulation and TMS systems.
+        </p>
+      </div>
+
+      {/* Video Cards */}
+      <div className="flex justify-center gap-10">
+
+        {videos.map((item) => (
+
           <motion.div
-            initial={{ opacity:0, y:40 }}
-            whileInView={{ opacity:1, y:0 }}
-            transition={{ duration:0.6 }}
-            className="text-center"
+            key={item.id}
+            whileHover={{ scale: 1.04 }}
+            className="relative rounded-3xl overflow-hidden shadow-xl group cursor-pointer"
           >
-            <h1 className="text-4xl md:text-5xl font-bold text-slate-900">
-              Medical Technology Resources
-            </h1>
 
-            <p className="mt-6 text-gray-600 max-w-3xl mx-auto">
-              Access catalogs, product demonstrations, and regulatory
-              documentation related to our advanced medical technologies.
-            </p>
-          </motion.div>
+            {/* Product Image */}
+            <Image
+              src={item.thumbnail}
+              alt={item.title}
+              width={800}
+              height={500}
+              className="w-[500px] h-[380px] object-cover"
+            />
 
-          {/* ================= CATALOG ================= */}
-          <div className="space-y-10">
+            {/* Overlay */}
+            <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
 
-            <motion.h2
-              initial={{ opacity:0 }}
-              whileInView={{ opacity:1 }}
-              className="text-3xl font-semibold text-center"
-            >
-              Catalog & Brochures
-            </motion.h2>
-
-            <div className="grid md:grid-cols-2 gap-10">
-
-              {/* TMS */}
-              <motion.div
-                whileHover={{ y:-10 }}
-                className="group bg-white/70 backdrop-blur-xl rounded-3xl shadow-xl overflow-hidden border border-gray-100"
+              {/* Play Button */}
+              <button
+                onClick={() => setActiveVideo(item.video)}
+                className="w-16 h-16 rounded-full bg-white/90 flex items-center justify-center text-2xl hover:scale-110 transition"
               >
-
-                <div className="overflow-hidden">
-                  <Image
-                    src="/resources/tms-brochure.jpg"
-                    alt="TMS Brochure"
-                    width={600}
-                    height={400}
-                    className="w-full h-[250px] object-cover group-hover:scale-110 transition duration-500"
-                  />
-                </div>
-
-                <div className="p-8">
-                  <h3 className="text-xl font-semibold text-slate-900">
-                    TMS Technology
-                  </h3>
-
-                  <p className="mt-3 text-gray-600">
-                    Download detailed product catalog including clinical
-                    information and system specifications.
-                  </p>
-
-                  <button className="mt-6 px-6 py-3 bg-gradient-to-r from-blue-600 to-blue-800 text-white rounded-xl shadow hover:scale-105 transition">
-                    Download Brochure
-                  </button>
-                </div>
-
-              </motion.div>
-
-
-              {/* EMS */}
-              <motion.div
-                whileHover={{ y:-10 }}
-                className="group bg-white/70 backdrop-blur-xl rounded-3xl shadow-xl overflow-hidden border border-gray-100"
-              >
-
-                <div className="overflow-hidden">
-                  <Image
-                    src="/resources/ems-brochure.jpg"
-                    alt="EMS Brochure"
-                    width={600}
-                    height={400}
-                    className="w-full h-[250px] object-cover group-hover:scale-110 transition duration-500"
-                  />
-                </div>
-
-                <div className="p-8">
-                  <h3 className="text-xl font-semibold text-slate-900">
-                    Electromagnetic Stimulation
-                  </h3>
-
-                  <p className="mt-3 text-gray-600">
-                    Explore therapeutic applications and technical
-                    specifications of our electromagnetic stimulation systems.
-                  </p>
-
-                  <button className="mt-6 px-6 py-3 bg-gradient-to-r from-blue-600 to-blue-800 text-white rounded-xl shadow hover:scale-105 transition">
-                    Download Brochure
-                  </button>
-                </div>
-
-              </motion.div>
-
-            </div>
-          </div>
-
-          {/* ================= VIDEOS ================= */}
-          <div className="space-y-10">
-
-            <h2 className="text-3xl font-semibold text-center">
-              Product Demonstration Videos
-            </h2>
-
-            <div className="grid md:grid-cols-2 gap-10">
-
-              {/* EMS VIDEO */}
-              <motion.div
-          whileHover={{ scale: 1.03 }}
-          className="rounded-3xl overflow-hidden shadow-xl"
-        >
-          <video
-            controls
-            className="w-full h-[400px] object-cover"
-          >
-            <source src="/videos/SALUS_TALENT_PRO.mp4" type="video/mp4" />
-          </video>
-        </motion.div>
-
-
-              {/* TMS VIDEO */}
-             <motion.div
-          whileHover={{ scale: 1.03 }}
-          className="rounded-3xl overflow-hidden shadow-xl"
-        >
-          <video
-            controls
-            className="w-full h-[400px] object-cover"
-          >
-            <source src="/videos/ALTMS.mp4" type="video/mp4" />
-          </video>
-        </motion.div>
-            </div>
-          </div>
-
-
-          {/* ================= FDA ================= */}
-          <motion.div
-            initial={{ opacity:0, y:40 }}
-            whileInView={{ opacity:1, y:0 }}
-            transition={{ duration:0.6 }}
-            className="text-center"
-          >
-
-            <div className="bg-gradient-to-r from-blue-900 to-blue-700 text-white rounded-3xl p-14 shadow-xl max-w-4xl mx-auto">
-
-              <h2 className="text-3xl font-semibold">
-                FDA & Regulatory Compliance
-              </h2>
-
-              <p className="mt-6 text-blue-100">
-                Our technologies meet strict regulatory requirements
-                and compliance standards within the U.S. healthcare system.
-                Documentation is available upon request.
-              </p>
-
-              <button className="mt-8 px-8 py-3 bg-white text-blue-900 rounded-xl font-semibold hover:scale-105 transition">
-                Request Compliance Documents
+                ▶
               </button>
 
             </div>
 
+            {/* Product Title */}
+            <div className="absolute bottom-0 left-0 right-0 bg-black/60 text-white text-center p-4 text-lg font-semibold">
+              {item.title}
+            </div>
+
           </motion.div>
 
+        ))}
+
+      </div>
+
+      {/* Video Modal */}
+      {activeVideo && (
+
+        <div className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 p-6">
+
+          <div className="relative w-full max-w-4xl">
+
+            {/* Close Button */}
+            <button
+              onClick={() => setActiveVideo(null)}
+              className="absolute -top-10 right-0 text-white text-3xl"
+            >
+              ✕
+            </button>
+
+            {/* Video Player */}
+            <video
+              controls
+              autoPlay
+              className="w-full rounded-xl shadow-2xl"
+            >
+              <source src={activeVideo} type="video/mp4" />
+            </video>
+
+          </div>
+
         </div>
-      </section>
-      <DoctorTestimonials/>
-      <TechnologyTimeline/>
-      <ClinicalStats/>
-    </App_layout>
+
+      )}
+
+    </div>
+ 
+    
+
   );
 }

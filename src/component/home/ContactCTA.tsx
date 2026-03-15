@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 export function ContactCTA() {
   return (
@@ -34,14 +35,14 @@ export function ContactCTA() {
 
         {/* CTA Buttons */}
         <div className="flex flex-col md:flex-row gap-6 justify-center">
-
+<Link href="/contact/getintouch">
           <button className="px-8 py-3 bg-white text-pink-600 rounded-full font-semibold hover:scale-105 transition shadow-lg">
             Contact Us
-          </button>
-
+          </button></Link>
+<Link href="/contact/inquiryform">
           <button className="px-8 py-3 border border-white rounded-full hover:bg-white hover:text-pink-600 transition">
             Request Information
-          </button>
+          </button></Link>
 
         </div>
 

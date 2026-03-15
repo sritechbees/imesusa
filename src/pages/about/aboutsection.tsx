@@ -1,139 +1,88 @@
 "use client";
 
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import App_layout from "@/component/layout/app_layout";
-import { motion } from "framer-motion";
-import Image from "next/image";
+import About from "./about";
 
-const fadeUp = {
-  hidden: { opacity: 0, y: 60 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
-};
+export default function AboutHero() {
+  useEffect(() => {
+    AOS.init({
+      duration: 1200,
+      once: true,
+    });
+  }, []);
 
-export default function AboutSection() {
   return (
     <App_layout>
-    <section className="w-full bg-gradient-to-b from-white to-blue-50 py-20 px-6 md:px-16 font-[Poppins]">
-      <div className="max-w-7xl mx-auto space-y-28">
-        
-        {/* 1 */}
-        <motion.div
-          variants={fadeUp}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          className="grid md:grid-cols-2 gap-12 items-center"
-        >
-          <Image
-            src="/about/about1.jpg"
-            alt="Medical Innovation"
-            width={600}
-            height={400}
-            className="rounded-3xl shadow-xl"
-          />
+      <section className="relative overflow-hidden bg-gradient-to-br from-slate-950 via-blue-950 to-slate-950 py-24 sm:py-28 px-4 sm:px-6">
 
-          <div>
-            <h2 className="text-3xl font-bold text-blue-900 mb-6">
-              Our Purpose: Meaningful Medical Innovation
-            </h2>
-            <p className="text-gray-600 leading-relaxed">
-              We introduce medical technologies that truly make a difference.
-              Every device we bring forward is clinically validated, safe,
-              practical, and designed to enhance quality of life in U.S.
-              healthcare and wellness environments.
-            </p>
+        {/* Glow Background */}
+        <div className="pointer-events-none absolute top-[-100px] left-[-100px] w-72 h-72 sm:w-96 sm:h-96 bg-cyan-500/20 blur-[120px] rounded-full"></div>
+        <div className="pointer-events-none absolute bottom-[-120px] right-[-120px] w-72 h-72 sm:w-96 sm:h-96 bg-blue-500/20 blur-[120px] rounded-full"></div>
+
+        <div className="max-w-4xl mx-auto text-center relative z-10">
+
+          {/* Small Title */}
+          <p
+            data-aos="fade-up"
+            className="text-cyan-400 uppercase tracking-widest text-xs sm:text-sm mb-4"
+          >
+            International Medical Equipment Solution
+          </p>
+
+          {/* Main Heading */}
+          <h1
+            data-aos="fade-up"
+            data-aos-delay="200"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6"
+          >
+            Medical Technologies <br className="hidden sm:block" />
+            That Truly Make a Difference
+          </h1>
+
+          {/* Description */}
+          <p
+            data-aos="fade-up"
+            data-aos-delay="400"
+            className="max-w-2xl mx-auto text-base sm:text-lg text-gray-400 leading-relaxed"
+          >
+            Our mission is to carefully select and introduce clinically
+            validated, high-quality medical devices that enhance quality of
+            life. Every device we introduce is selected based on clinical
+            value, safety, regulatory awareness, and real-world usability
+            within U.S. healthcare and wellness environments.
+          </p>
+
+          {/* Divider */}
+          <div
+            data-aos="zoom-in"
+            data-aos-delay="600"
+            className="w-20 sm:w-24 h-[3px] bg-cyan-400 mx-auto mt-8 rounded"
+          ></div>
+
+          {/* Core Values */}
+          <div
+            data-aos="fade-up"
+            data-aos-delay="800"
+            className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 mt-10 sm:mt-14 text-gray-300"
+          >
+            {["Meaningful", "Practical", "Safe", "Life-Improving"].map(
+              (item, index) => (
+                <div
+                  key={index}
+                  className="border border-white/10 rounded-lg py-4 px-3 backdrop-blur bg-white/5 hover:border-cyan-400 transition"
+                >
+                  {item}
+                </div>
+              )
+            )}
           </div>
-        </motion.div>
+        </div>
+      </section>
 
-        {/* 2 */}
-        <motion.div
-          variants={fadeUp}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          className="grid md:grid-cols-2 gap-12 items-center"
-        >
-          <div className="order-2 md:order-1">
-            <h2 className="text-3xl font-bold text-blue-900 mb-6">
-              Bridging Korean Innovation to the United States
-            </h2>
-            <p className="text-gray-600 leading-relaxed">
-              Korea is one of the most advanced medical technology ecosystems
-              in the world. Our mission is to connect proven Korean medical
-              innovation with the real-world needs of U.S. clinics, wellness
-              centers, and healthcare providers.
-            </p>
-          </div>
-
-          <Image
-            src="/about/about1.jpg"
-            alt="Medical Technology Korea"
-            width={600}
-            height={400}
-            className="rounded-3xl shadow-xl order-1 md:order-2"
-          />
-        </motion.div>
-
-        {/* 3 */}
-        <motion.div
-          variants={fadeUp}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          className="grid md:grid-cols-2 gap-12 items-center"
-        >
-          <Image
-            src="/about/about1.jpg"
-            alt="Medical Solutions"
-            width={600}
-            height={400}
-            className="rounded-3xl shadow-xl"
-          />
-
-          <div>
-            <h2 className="text-3xl font-bold text-blue-900 mb-6">
-              More Than Distribution
-            </h2>
-            <p className="text-gray-600 leading-relaxed">
-              We are not just a distributor of machines — we are a curator of
-              meaningful medical solutions. Every product we introduce is
-              selected based on its ability to genuinely benefit patients and
-              healthcare professionals.
-            </p>
-          </div>
-        </motion.div>
-
-        {/* 4 */}
-        <motion.div
-          variants={fadeUp}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          className="grid md:grid-cols-2 gap-12 items-center"
-        >
-          <div className="order-2 md:order-1">
-            <h2 className="text-3xl font-bold text-blue-900 mb-6">
-              Our Commitment & Future Focus
-            </h2>
-            <p className="text-gray-600 leading-relaxed">
-              If it does not help people — we do not introduce it. If it truly
-              benefits lives — we stand behind it. iMESUSA will begin by
-              introducing TMS and Electromagnetic Stimulation devices,
-              representing our commitment to safe and clinically meaningful
-              innovation.
-            </p>
-          </div>
-
-          <Image
-            src="/about/about1.jpg"
-            alt="TMS Machine"
-            width={600}
-            height={400}
-            className="rounded-3xl shadow-xl order-1 md:order-2"
-          />
-        </motion.div>
-
-      </div>
-    </section>
+      <About />
     </App_layout>
   );
 }

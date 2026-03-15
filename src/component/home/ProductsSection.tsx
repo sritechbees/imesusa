@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Technologies() {
   const tech = [
@@ -78,9 +79,10 @@ export default function Technologies() {
                 </p>
 
                 {/* Button */}
+                <Link href="/resources/resouceshero">
                 <button className="mt-6 px-6 py-2 bg-gradient-to-r from-pink-500 to-pink-600 text-white rounded-full hover:scale-105 transition shadow-lg hover:shadow-pink-500/40">
                   Learn More
-                </button>
+                </button></Link>
 
               </div>
 

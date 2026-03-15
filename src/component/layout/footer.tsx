@@ -2,161 +2,201 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { FaHeartbeat, FaHospital, FaUserMd } from "react-icons/fa";
 
 export default function Footer() {
   return (
-    <footer className="relative overflow-hidden bg-gradient-to-br from-pink-950 via-rose-900 to-pink-800 text-gray-200 pt-20 pb-10">
+    <footer className="relative bg-gradient-to-br from-slate-950 via-blue-950 to-slate-900 text-gray-300 pt-20 pb-10 overflow-hidden">
 
-      {/* Animated Background Icons */}
-      <motion.div
-        className="absolute top-10 left-10 text-pink-300 opacity-20 text-6xl"
-        animate={{ y: [0, -30, 0] }}
-        transition={{ repeat: Infinity, duration: 6 }}
-      >
-        <FaHeartbeat />
-      </motion.div>
-
-      <motion.div
-        className="absolute bottom-20 right-20 text-pink-300 opacity-20 text-7xl"
-        animate={{ y: [0, 30, 0] }}
-        transition={{ repeat: Infinity, duration: 7 }}
-      >
-        <FaHospital />
-      </motion.div>
-
-      <motion.div
-        className="absolute top-1/2 left-1/3 text-pink-200 opacity-20 text-6xl"
-        animate={{ y: [0, -25, 0] }}
-        transition={{ repeat: Infinity, duration: 5 }}
-      >
-        <FaUserMd />
-      </motion.div>
-
-      {/* Glow Effects */}
-      <div className="absolute top-0 left-0 w-72 h-72 bg-pink-500/20 blur-3xl rounded-full"></div>
-      <div className="absolute bottom-0 right-0 w-72 h-72 bg-rose-500/20 blur-3xl rounded-full"></div>
+      {/* Background Glow Effects */}
+      <div className="absolute top-0 left-0 w-80 h-80 bg-cyan-500/20 blur-[120px] rounded-full"></div>
+      <div className="absolute bottom-0 right-0 w-80 h-80 bg-blue-500/20 blur-[120px] rounded-full"></div>
 
       <div className="relative max-w-7xl mx-auto px-6">
 
-        {/* Top Grid */}
-        <div className="grid md:grid-cols-4 gap-12 border-b border-pink-700 pb-16">
+        {/* Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
 
-          {/* Brand */}
-          <div>
-            <h2 className="text-3xl font-bold text-white tracking-wide">
+          {/* Company */}
+          <motion.div
+            initial={{ opacity:0, y:40 }}
+            whileInView={{ opacity:1, y:0 }}
+            transition={{ duration:0.6 }}
+          >
+            <h2 className="text-2xl font-bold text-white mb-4">
               iMESUSA
             </h2>
 
-            <p className="text-pink-300 text-sm mt-1">
-              International Medical Equipment Solution
+            <p className="text-gray-400 text-sm leading-relaxed">
+              International Medical Equipment Solution provides advanced
+              medical technologies designed to improve healthcare outcomes
+              and support modern wellness centers.
             </p>
+          </motion.div>
 
-            <p className="mt-5 text-sm leading-relaxed text-gray-300">
-              We introduce clinically meaningful, high-quality medical
-              technologies that improve lives. Every device is selected
-              based on safety, regulatory awareness, and real-world usability
-              within U.S. healthcare settings.
-            </p>
-          </div>
-
-          {/* Products */}
-          <div>
-            <h3 className="text-white font-semibold text-lg mb-5">
-              Products
+          {/* Quick Links */}
+          <motion.div
+            initial={{ opacity:0, y:40 }}
+            whileInView={{ opacity:1, y:0 }}
+            transition={{ duration:0.7 }}
+          >
+            <h3 className="text-lg font-semibold text-white mb-5">
+              Quick Links
             </h3>
 
-            <ul className="space-y-4 text-sm">
+            <ul className="space-y-3">
 
-              <li className="group cursor-pointer">
-                <span className="font-semibold text-pink-300 group-hover:text-pink-400 transition">
-                  TMS
-                </span>
-
-                <p className="text-gray-300 text-sm">
-                  Brain & Mental Wellness for MedSpa-Based Care
-                </p>
+              <li>
+                <Link
+                  href="/"
+                  className="hover:text-cyan-400 transition"
+                >
+                  Home
+                </Link>
               </li>
 
-              <li className="group cursor-pointer">
-                <span className="font-semibold text-pink-300 group-hover:text-pink-400 transition">
-                  SALUS TALENT PRO
-                </span>
+              <li>
+                <Link
+                  href="/about/aboutsection"
+                  className="hover:text-cyan-400 transition"
+                >
+                  About Us
+                </Link>
+              </li>
 
-                <p className="text-gray-300 text-sm">
-                  Premium Electromagnetic Pain Therapy Device
-                </p>
+              <li>
+                <Link
+                  href="/products/twoproductsection"
+                  className="hover:text-cyan-400 transition"
+                >
+                  Products
+                </Link>
+              </li>
+
+              <li>
+                <Link
+                  href="/resources/resouceshero"
+                  className="hover:text-cyan-400 transition"
+                >
+                  Resources
+                </Link>
+              </li>
+
+              <li>
+                <Link
+                  href="/contact/getintouch"
+                  className="hover:text-cyan-400 transition"
+                >
+                  Contact
+                </Link>
               </li>
 
             </ul>
-          </div>
+          </motion.div>
 
           {/* Resources */}
-          <div>
-            <h3 className="text-white font-semibold text-lg mb-5">
-              Resources
+<motion.div
+  initial={{ opacity:0, y:40 }}
+  whileInView={{ opacity:1, y:0 }}
+  transition={{ duration:0.8 }}
+>
+  <h3 className="text-lg font-semibold text-white mb-5">
+    Resources
+  </h3>
+
+  <ul className="space-y-3">
+
+    <li>
+      <Link
+        href="/resources/downloadcatalog"
+        className="hover:text-cyan-400 transition cursor-pointer"
+      >
+        Catalog & Brochures
+      </Link>
+    </li>
+
+    <li>
+      <Link
+        href="/resources/viewresourse"
+        className="hover:text-cyan-400 transition cursor-pointer"
+      >
+        Product Videos
+      </Link>
+    </li>
+
+    <li>
+      <Link
+        href="/resources/fdafooter"
+        className="hover:text-cyan-400 transition cursor-pointer"
+      >
+        FDA & Compliance
+      </Link>
+    </li>
+
+    <li>
+      <Link
+        href="/resources/techoverview"
+        className="hover:text-cyan-400 transition cursor-pointer"
+      >
+        Technology Overview
+      </Link>
+    </li>
+
+  </ul>
+</motion.div>
+
+          {/* Contact */}
+          <motion.div
+            initial={{ opacity:0, y:40 }}
+            whileInView={{ opacity:1, y:0 }}
+            transition={{ duration:0.9 }}
+          >
+            <h3 className="text-lg font-semibold text-white mb-5">
+              Contact
             </h3>
 
-            <ul className="space-y-3 text-sm">
+            <ul className="space-y-3 text-gray-400 text-sm">
 
               <li>
-                <Link
-                  href="#"
-                  className="relative inline-block hover:text-pink-300 transition"
-                >
-                  Catalog & Brochures
-                  <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-pink-400 transition-all duration-300 group-hover:w-full"></span>
-                </Link>
+                Email: info@imesusa.com
               </li>
 
               <li>
-                <Link
-                  href="#"
-                  className="hover:text-pink-300 transition"
-                >
-                  Videos (Live Demo)
-                </Link>
+                Phone: +1 (000) 000-0000
               </li>
 
               <li>
-                <Link
-                  href="#"
-                  className="hover:text-pink-300 transition"
-                >
-                  FDA & Compliance
-                </Link>
+                United States
               </li>
 
             </ul>
-          </div>
 
-          {/* CTA */}
-          <div>
-            <h3 className="text-white font-semibold text-lg mb-5">
-              Contact / Inquiry
-            </h3>
+          </motion.div>
 
-            <p className="text-sm text-gray-300">
-              Physicians • MedSpa Owners • Clinics • IPA • Health Planners
-            </p>
-
-            <button className="mt-6 w-full py-3 bg-gradient-to-r from-pink-400 to-rose-400 text-pink-950 rounded-xl font-semibold hover:scale-105 hover:shadow-lg hover:shadow-pink-500/40 transition duration-300">
-              Submit Inquiry
-            </button>
-
-            <p className="text-xs text-gray-400 mt-4">
-              Thank you for your submission. Our team will contact you shortly.
-            </p>
-
-          </div>
         </div>
 
-        {/* Bottom */}
-        <div className="mt-12 pt- text-center text-sm text-gray-400">
-          © {new Date().getFullYear()} iMESUSA | www.imesusa.com
+        {/* Divider */}
+        <div className="border-t border-white/10 mt-14 pt-6 flex flex-col md:flex-row justify-between items-center text-sm text-gray-400">
+
+          <p>
+            © {new Date().getFullYear()} iMESUSA. All rights reserved.
+          </p>
+
+          <div className="flex gap-6 mt-4 md:mt-0">
+
+            <span className="hover:text-cyan-400 cursor-pointer transition">
+              Privacy Policy
+            </span>
+
+            <span className="hover:text-cyan-400 cursor-pointer transition">
+              Terms of Service
+            </span>
+
+          </div>
+
         </div>
 
       </div>
+
     </footer>
   );
 }

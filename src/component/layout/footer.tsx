@@ -157,11 +157,11 @@ export default function Footer() {
             <ul className="space-y-3 text-gray-400 text-sm">
 
               <li>
-                Email: info@imesusa.com
+                Email: sales@iMESusa.com
               </li>
 
               <li>
-                Phone: +1 (000) 000-0000
+                Phone: 949.838.7924
               </li>
 
               <li>

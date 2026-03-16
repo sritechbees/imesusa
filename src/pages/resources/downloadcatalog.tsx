@@ -23,12 +23,12 @@ export default function Downloadcatalog() {
     {
       title: "Electromagnetic Stimulation",
       desc: "Explore how electromagnetic stimulation devices support pain management and therapeutic recovery.",
-      file: "/brochures/em-stimulation.pdf",
+      file: "/about/ems_brochure.jpg",
     },
     {
       title: "Product Catalog",
       desc: "Download the complete iMESUSA product catalog including device details and technical specifications.",
-      file: "/brochures/product-catalog.pdf",
+      file: "/about/product_catalog.png",
     },
   ];
 
@@ -95,7 +95,7 @@ export default function Downloadcatalog() {
                 download
                 className="inline-block px-6 py-2 bg-cyan-500 hover:bg-cyan-400 text-white rounded-md text-sm font-medium transition"
               >
-                Download PDF
+                Download 
               </a>
 
             </div>

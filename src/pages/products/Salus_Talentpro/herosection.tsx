@@ -8,11 +8,12 @@ import PainManagement from "./PainManagement";
 import TechnologyFeatures from "./TechnologyFeatures";
 import ClinicalBenefits from "./ClinicalBenefits";
 import HealthcareSettings from "./HealthcareSettings";
+import Link from "next/link";
 
 export default function HeroSection() {
   return (
     <App_layout>
-    <section className="bg-gradient-to-r from-blue-50 to-white py-20">
+    <section className="bg-gradient-to-r from-blue-50 to-white py-20 mt-10">
       <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-10 items-center">
 
         {/* Text */}
@@ -42,13 +43,11 @@ export default function HeroSection() {
           </p>
 
           <div className="flex gap-4 mt-8">
-            <button className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition">
-              Learn More
-            </button>
-
+           
+<Link href="/resources/downloadcatalog">
             <button className="border border-blue-600 text-blue-600 px-6 py-3 rounded-lg hover:bg-blue-50 transition">
-              View Applications
-            </button>
+              View Brochures
+            </button></Link>
           </div>
         </motion.div>
 
@@ -59,7 +58,7 @@ export default function HeroSection() {
           transition={{ duration: 0.7 }}
         >
           <Image
-            src="/images/device.jpg"
+            src="/about/product2.png"
             alt="SALUS Talent Pro Device"
             width={500}
             height={400}

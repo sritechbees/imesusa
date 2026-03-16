@@ -1,11 +1,16 @@
 "use client";
 
 import App_layout from "@/component/layout/app_layout";
+import Head from "next/head";
 import Image from "next/image";
 
 export default function ContactSection() {
   return (
     <App_layout>
+        <Head>
+        <title>International Medical Equipment Solution | Contact</title>
+      </Head>
+
       <section className="relative py-28 bg-gradient-to-br from-white via-blue-50 to-slate-100 overflow-hidden font-[Poppins]">
 
         {/* Soft AI Glow Background */}

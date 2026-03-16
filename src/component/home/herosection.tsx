@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
+import Head from "next/head";
 
 const slides = [
   {
@@ -40,6 +41,10 @@ export default function HeroSection() {
   }, []);
 
   return (
+    <>
+    <Head>
+      <title>International Medical Equipment Solution </title>
+    </Head>
     <section className="relative w-full h-[80vh] md:h-[90vh] overflow-hidden">
 
       <AnimatePresence mode="wait">
@@ -125,5 +130,6 @@ export default function HeroSection() {
       </div>
 
     </section>
+    </>
   );
 }

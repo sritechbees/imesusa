@@ -49,7 +49,7 @@ export default function ClinicalBenefits() {
           transition={{ duration: 0.6 }}
         >
           <img
-            src="/images/patient-treatment.jpg"
+            src="/about/about1.jpg"
             className="rounded-xl shadow-lg"
           />
         </motion.div>

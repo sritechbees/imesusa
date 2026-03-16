@@ -1,94 +1,89 @@
 "use client";
 
+import { useState, useEffect } from "react";
+import { motion } from "framer-motion";
 import App_layout from "@/component/layout/app_layout";
-import Image from "next/image";
 import Link from "next/link";
+import Head from "next/head";
 
-export default function TwoProductHero() {
+const backgrounds = [
+  "/images/tms-banner.jpg",
+  "/images/salus-banner.jpg",
+];
+
+export default function ProductHeroBanner() {
+  const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIndex((prev) => (prev + 1) % backgrounds.length);
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <App_layout>
-      <section className="w-full min-h-screen bg-white py-24 px-6 md:px-16 font-[Poppins]">
-        <div className="max-w-7xl mx-auto space-y-24">
+      <Head>
+        <title>International Medical Equipment Solution | Products</title>
+      </Head>
+      <section className="relative h-screen w-full overflow-hidden">
 
-          {/* ====== TMS SECTION ====== */}
-          <div className="grid md:grid-cols-2 gap-16 items-center">
+        {/* Background Image */}
+        <motion.div
+          key={index}
+          className="absolute inset-0 bg-cover bg-center"
+          style={{
+            backgroundImage: `url(${backgrounds[index]})`,
+          }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1 }}
+        />
 
-            {/* LEFT IMAGE */}
-            <div data-aos="fade-right">
-              <Image
-                src="/about/tms.jpg"
-                alt="TMS Machine"
-                width={600}
-                height={500}
-                className="rounded-2xl shadow-xl"
-              />
-            </div>
+        {/* Dark Overlay */}
+        <div className="absolute inset-0 bg-black/60"></div>
 
-            {/* RIGHT CONTENT */}
-            <div data-aos="fade-left" className="space-y-6">
-              <h2 className="text-4xl font-bold text-gray-900">
-                TMS (Transcranial Magnetic Stimulation)
-              </h2>
+        {/* Content */}
+        <div className="relative z-10 flex items-center h-full max-w-6xl mx-auto px-6 text-white">
 
-              <p className="text-gray-600 leading-relaxed">
-                REMED TMS is a next-generation brain wellness technology designed
-                for modern MedSpa and healthcare environments. It is non-invasive,
-                requires no medication, and involves no downtime.
-              </p>
+          <div>
 
-              <ul className="space-y-3 text-gray-600">
-                <li>✓ Enhances Clarity & Focus</li>
-                <li>✓ Supports Emotional Balance</li>
-                <li>✓ Non-Invasive & Safe</li>
-                <li>✓ Globally trusted system</li>
-              </ul>
-<Link href="/products/TMSOverview">
-              <button className="mt-4 px-6 py-3 bg-blue-900 text-white rounded-lg hover:bg-blue-700 transition">
-                Learn More
-              </button>
-              </Link>
-            </div>
-          </div>
+            <h1 className="text-4xl md:text-6xl font-bold mb-6">
+              Advanced Medical Wellness Technology
+            </h1>
 
-          {/* ====== SECOND PRODUCT SECTION (ALTERNATE) ====== */}
-          <div className="grid md:grid-cols-2 gap-16 items-center">
+            <h2 className="text-xl md:text-2xl text-cyan-400 mb-6">
+              TMS & SALUS Talent Pro
+            </h2>
 
-            {/* LEFT CONTENT */}
-            <div data-aos="fade-right" className="space-y-6 order-2 md:order-1">
-              <h2 className="text-4xl font-bold text-gray-900">
-                SALUS TALENT PRO
-              </h2>
+            <p className="max-w-2xl text-gray-200 mb-10 text-lg">
+              Discover innovative non-invasive medical technologies designed
+              for brain wellness and pain management solutions for modern
+              MedSpa and clinical environments.
+            </p>
 
-              <p className="text-gray-600 leading-relaxed">
-                A premium wellness enhancement device engineered to support
-                total mind-body optimization in clinical and wellness centers.
-              </p>
+            {/* Buttons */}
+            <div className="flex gap-6 flex-wrap">
 
-              <ul className="space-y-3 text-gray-600">
-                <li>✓ Designed for high-end practices</li>
-                <li>✓ Expands service offerings</li>
-                <li>✓ Encourages recurring wellness programs</li>
-                <li>✓ Premium patient experience</li>
-              </ul>
-<Link href="/products/Salus_Talentpro/herosection">
-              <button className="mt-4 px-6 py-3 bg-blue-900 text-white rounded-lg hover:bg-blue-700 transition">
-                Explore Product
+              {/* TMS Button */}
+              <Link href="/products/tms/TMSOverview">
+              <button className="px-8 py-4 bg-cyan-500 rounded-full font-semibold hover:scale-105 hover:bg-cyan-400 transition duration-300 shadow-lg">
+                Explore TMS
               </button></Link>
+
+              {/* SALUS Button */}
+               <Link href="/products/Salus_Talentpro/herosection">
+              <button className="px-8 py-4 border border-white rounded-full hover:bg-white hover:text-black transition duration-300">
+                Explore SALUS Talent Pro
+              </button></Link>
+
             </div>
 
-            {/* RIGHT IMAGE */}
-            <div data-aos="fade-left" className="order-1 md:order-2">
-              <Image
-                src="/about/product2.png"
-                alt="Salus Talent Pro"
-                width={500}
-                height={100}
-                className="rounded-2xl shadow-xl"
-              />
-            </div>
           </div>
 
         </div>
+
       </section>
     </App_layout>
   );

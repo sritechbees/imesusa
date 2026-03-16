@@ -5,6 +5,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import App_layout from "@/component/layout/app_layout";
 import About from "./about";
+import Head from "next/head";
 
 export default function AboutHero() {
   useEffect(() => {
@@ -16,6 +17,9 @@ export default function AboutHero() {
 
   return (
     <App_layout>
+      <Head>
+        <title>International Medical Equipment Solution | About</title>
+      </Head>
       <section className="relative overflow-hidden bg-gradient-to-br from-slate-950 via-blue-950 to-slate-950 py-24 sm:py-28 px-4 sm:px-6">
 
         {/* Glow Background */}

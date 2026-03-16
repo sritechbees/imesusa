@@ -10,7 +10,7 @@ export default function HealthcareSettings() {
     {
       title: "Pain Management Clinics",
       desc: "Supports physicians specializing in chronic pain therapy.",
-      img: "/images/pain-clinic.jpg",
+      img: "/about/technology_evaluation.jpg",
     },
     {
       title: "Physiotherapy Centers",

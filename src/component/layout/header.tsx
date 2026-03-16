@@ -23,17 +23,16 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
 
         {/* Logo */}
-     
-<Link href="/" className="flex items-center">
-  <Image
-    src="/about/logo2.png"   // place your logo in public/images
-    alt="iMESUSA Logo"
-    width={170}
-    height={70}
-    className="object-contain"
-    priority
-  />
-</Link>
+        <Link href="/" className="flex items-center">
+          <Image
+            src="/about/logo2.png"
+            alt="iMESUSA Logo"
+            width={170}
+            height={70}
+            className="object-contain"
+            priority
+          />
+        </Link>
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-8 font-medium text-gray-700">
@@ -42,17 +41,18 @@ export default function Header() {
             <Link
               key={link.name}
               href={link.href}
-              className={`relative transition 
-              ${pathname === link.href
-                  ? "text-gray-900 font-semibold"
-                  : "hover:text-gray-900"
-                }`}
+              className={`relative transition duration-300
+              ${
+                pathname === link.href
+                  ? "text-[#fd5da2] font-semibold"
+                  : "hover:text-[#fd5da2]"
+              }`}
             >
               {link.name}
 
               {/* Active underline */}
               {pathname === link.href && (
-                <span className="absolute -bottom-2 left-0 w-full h-[2px] bg-gray-900"></span>
+                <span className="absolute -bottom-2 left-0 w-full h-[2px] bg-[#fd5da2]"></span>
               )}
             </Link>
           ))}
@@ -60,28 +60,29 @@ export default function Header() {
         </nav>
 
         {/* CTA Button */}
-       <div className="hidden md:flex items-center">
-  <Link
-    href="/contact/inquiryform/"
-    className="relative px-6 py-2.5 rounded-lg font-semibold text-white 
-    bg-[#fd5da2] border border-[#df3b81] overflow-hidden group 
-    transition-all duration-500 hover:text-[#df3b81]"
-  >
-    {/* Hover Background Animation */}
-    <span className="absolute inset-0 bg-white transform scale-x-0 origin-left 
-    group-hover:scale-x-100 transition-transform duration-500 ease-out"></span>
+        <div className="hidden md:flex items-center">
+          <Link
+            href="/contact/inquiryform"
+            className="relative px-6 py-2.5 rounded-lg font-semibold text-white 
+            bg-[#fd5da2] border border-[#fd5da2] overflow-hidden group 
+            transition-all duration-500 hover:text-[#fd5da2]"
+          >
 
-    {/* Button Text */}
-    <span className="relative z-10 tracking-wide">
-      Inquiry
-    </span>
-  </Link>
-</div>
+            {/* Hover Background */}
+            <span className="absolute inset-0 bg-white transform scale-x-0 origin-left 
+            group-hover:scale-x-100 transition-transform duration-500 ease-out"></span>
+
+            <span className="relative z-10 tracking-wide">
+              Inquiry
+            </span>
+
+          </Link>
+        </div>
 
         {/* Mobile Menu Button */}
         <button
           onClick={() => setMenuOpen(!menuOpen)}
-          className="md:hidden flex flex-col gap-1"
+          className="md:hidden flex flex-col gap-1.5"
         >
           <span className="w-6 h-[2px] bg-gray-900"></span>
           <span className="w-6 h-[2px] bg-gray-900"></span>
@@ -91,37 +92,40 @@ export default function Header() {
       </div>
 
       {/* Mobile Menu */}
-      {menuOpen && (
-        <div className="md:hidden bg-white border-t border-gray-200">
+      <div
+        className={`md:hidden bg-white border-t border-gray-200 transition-all duration-500 overflow-hidden ${
+          menuOpen ? "max-h-[400px]" : "max-h-0"
+        }`}
+      >
 
-          <div className="flex flex-col px-6 py-6 space-y-5 text-gray-700 font-medium">
+        <div className="flex flex-col px-6 py-6 space-y-5 text-gray-700 font-medium">
 
-            {navLinks.map((link) => (
-              <Link
-                key={link.name}
-                href={link.href}
-                onClick={() => setMenuOpen(false)}
-                className={`transition ${
-                  pathname === link.href
-                    ? "text-gray-900 font-semibold"
-                    : "hover:text-gray-900"
-                }`}
-              >
-                {link.name}
-              </Link>
-            ))}
-
+          {navLinks.map((link) => (
             <Link
-              href="/Inquiry"
-              className="mt-3 inline-block text-center px-5 py-2 rounded-xl font-medium text-white bg-gray-900"
+              key={link.name}
+              href={link.href}
+              onClick={() => setMenuOpen(false)}
+              className={`transition duration-300  ${
+                pathname === link.href
+                  ? "text-[#fd5da2] font-semibold"
+                  : "hover:text-[#fd5da2]"
+              }`}
             >
-              Inquiry
+              {link.name}
             </Link>
+           
+          ))}
 
-          </div>
+          <Link
+            href="/contact/inquiryform"
+            className="mt-3 inline-block text-center max-sm:mr-36 px-5 py-2.5 rounded-xl font-semibold text-white bg-[#fd5da2]"
+          >
+            Inquiry
+          </Link>
 
         </div>
-      )}
+
+      </div>
 
     </header>
   );

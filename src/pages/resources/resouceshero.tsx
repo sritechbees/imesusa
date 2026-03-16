@@ -10,11 +10,15 @@ import DownloadBrochures from "./downloadbrochures";
 import FDACompliance from "./fda";
 import TechnologyTimeline from "./TechnologyTimeline";
 import DoctorTestimonials from "./DoctorTestimonials";
+import Head from "next/head";
 
 
 export default function ResourcesHeroSection() {
   return (
     <App_layout>
+      <Head>
+        <title> International Medical Equipment Solution | Resources</title>
+      </Head>
     <section className="relative h-[80vh] min-h-[600px] flex items-center justify-center overflow-hidden">
 
       {/* Background Image */}

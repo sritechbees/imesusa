@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import App_layout from "@/component/layout/app_layout";
-
+import Head from "next/head";
 export default function InquiryForm() {
   const [submitted, setSubmitted] = useState(false);
 
@@ -13,6 +13,10 @@ export default function InquiryForm() {
 };
   return (
     <App_layout>
+      <Head>
+              <title> International Medical Equipment Solution | Inquiry</title>
+            </Head>
+      
       <section className="w-full bg-gradient-to-br from-slate-50 via-white to-blue-50 py-24 px-6 md:px-16 font-[Poppins]">
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
 

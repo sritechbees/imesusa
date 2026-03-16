@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export default function KoreanInnovationBridge() {
   return (
-    <section className="relative py-28 text-gray-300 overflow-hidden">
+    <section className="relative py-20 text-gray-300 overflow-hidden">
 
       {/* FULL BACKGROUND IMAGE */}
       <div className="absolute inset-0 -z-10">

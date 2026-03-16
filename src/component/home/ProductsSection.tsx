@@ -19,33 +19,27 @@ export default function Technologies() {
   ];
 
   return (
-    <section className="relative bg-slate-950 py-24 text-gray-300 overflow-hidden">
+    <section className="py-20 bg-white">
+      <div className="max-w-7xl mx-auto px-6">
 
-      {/* Background Glow */}
-      <div className="absolute top-0 left-0 w-96 h-96 bg-pink-500/20 blur-3xl rounded-full"></div>
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-purple-500/20 blur-3xl rounded-full"></div>
-
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
-
-        {/* Section Title */}
+        {/* Title */}
         <motion.div
-          initial={{ opacity: 0, y: 60 }}
+          initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7 }}
+          transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            Technologies <span className="text-pink-500">We Introduce</span>
+          <h2 className="text-4xl md:text-4xl font-bold text-gray-900 mb-4">
+            Technologies <span className="text-[#fd5da2]">We Introduce</span>
           </h2>
 
-          <p className="max-w-2xl mx-auto text-gray-400">
+          <p className="max-w-2xl mx-auto text-gray-500">
             iMESUSA introduces innovative and clinically valuable medical
-            technologies designed to improve patient care and healthcare
-            outcomes.
+            technologies designed to improve patient care and healthcare outcomes.
           </p>
         </motion.div>
 
-        {/* Technology Cards */}
+        {/* Cards */}
         <div className="grid md:grid-cols-2 gap-10">
 
           {tech.map((item, index) => (
@@ -54,35 +48,35 @@ export default function Technologies() {
               initial={{ opacity: 0, y: 80 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.2 }}
-              className="bg-white/5 backdrop-blur-md border border-pink-500/20 rounded-xl overflow-hidden hover:scale-105 transition duration-300 hover:border-pink-400 shadow-lg"
+              className="group relative overflow-hidden rounded-xl shadow-lg"
             >
 
               {/* Image */}
-              <div className="relative h-64 w-full">
+              <div className="relative h-[300px] md:h-[350px] w-full">
                 <Image
                   src={item.img}
                   alt={item.title}
                   fill
-                  className="object-cover hover:scale-110 transition duration-500"
+                  className="object-cover transition duration-500 group-hover:scale-110"
                 />
               </div>
 
-              {/* Content */}
-              <div className="p-6">
+              {/* Hover Content */}
+              <div className="absolute inset-0 bg-black/60 flex flex-col justify-center items-center text-center px-6 opacity-0 group-hover:opacity-100 transition duration-500">
 
                 <h3 className="text-2xl font-semibold text-white mb-3">
                   {item.title}
                 </h3>
 
-                <p className="text-gray-400 leading-relaxed text-sm">
+                <p className="text-gray-200 text-sm mb-5">
                   {item.desc}
                 </p>
 
-                {/* Button */}
                 <Link href="/resources/resouceshero">
-                <button className="mt-6 px-6 py-2 bg-gradient-to-r from-pink-500 to-pink-600 text-white rounded-full hover:scale-105 transition shadow-lg hover:shadow-pink-500/40">
-                  Learn More
-                </button></Link>
+                  <button className="px-6 py-2 bg-[#fd5da2] text-white rounded-full hover:bg-pink-700 transition">
+                    Learn More
+                  </button>
+                </Link>
 
               </div>
 
@@ -90,7 +84,6 @@ export default function Technologies() {
           ))}
 
         </div>
-
       </div>
     </section>
   );

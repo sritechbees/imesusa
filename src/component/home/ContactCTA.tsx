@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export function ContactCTA() {
   return (
-    <section className="relative bg-slate-950 text-gray-300 py-20 text-white overflow-hidden">
+    <section className="relative  bg-slate-950 text-gray-300 py-20 mb-10 text-white overflow-hidden">
 
       {/* Glow Effect */}
       <div className="absolute top-0 left-0 w-72 h-72 bg-white/20 blur-3xl rounded-full"></div>

@@ -4,20 +4,16 @@ import { motion } from "framer-motion";
 
 export function OurCommitment() {
   return (
-    <section className="relative bg-slate-950 py-24 text-gray-300 overflow-hidden">
+    <section className="py-10 bg-white text-gray-700">
 
-      {/* Glow Background */}
-      <div className="absolute top-0 left-0 w-80 h-80 bg-pink-500/20 blur-3xl rounded-full"></div>
-      <div className="absolute bottom-0 right-0 w-80 h-80 bg-purple-500/20 blur-3xl rounded-full"></div>
-
-      <div className="max-w-6xl mx-auto px-6 text-center relative z-10">
+      <div className="max-w-6xl mx-auto px-6 text-center">
 
         {/* Title */}
         <motion.h2
           initial={{ opacity: 0, y: 60 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
-          className="text-4xl md:text-5xl font-bold text-white mb-6"
+          className="text-4xl md:text-5xl font-bold text-gray-900 mb-6"
         >
           Our <span className="text-[#fd5da2]">Commitment</span>
         </motion.h2>
@@ -27,7 +23,7 @@ export function OurCommitment() {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ delay: 0.3 }}
-          className="max-w-3xl mx-auto text-gray-400 mb-12 leading-relaxed"
+          className="max-w-3xl mx-auto text-gray-500 mb-12 leading-relaxed"
         >
           At iMESUSA, we are not simply distributors of medical devices.
           We carefully curate meaningful medical solutions that bring real
@@ -36,14 +32,14 @@ export function OurCommitment() {
         </motion.p>
 
         {/* Cards */}
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
 
           {/* Card 1 */}
           <motion.div
             initial={{ opacity: 0, y: 60 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="relative group overflow-hidden border border-[#fd5da2]/20 rounded-xl p-8 bg-white/5 hover:scale-105 transition duration-300"
+            className="relative group overflow-hidden border border-[#fd5da2]/30 rounded-xl p-8 bg-white shadow-md hover:scale-105 transition duration-300"
           >
 
             {/* Gradient Hover Layer */}
@@ -51,11 +47,11 @@ export function OurCommitment() {
 
             {/* Content */}
             <div className="relative z-10">
-              <h3 className="text-xl font-semibold text-white mb-4 group-hover:text-black transition">
+              <h3 className="text-xl font-semibold text-gray-900 mb-4 group-hover:text-black transition">
                 If it does not help people
               </h3>
 
-              <p className="text-gray-400 group-hover:text-black transition">
+              <p className="text-gray-600 group-hover:text-black transition">
                 We do not introduce technologies that fail to provide meaningful
                 value to healthcare professionals and patients.
               </p>
@@ -68,7 +64,7 @@ export function OurCommitment() {
             initial={{ opacity: 0, y: 60 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}
-            className="relative group overflow-hidden border border-[#fd5da2]/20 rounded-xl p-8 bg-white/5 hover:scale-105 transition duration-300"
+            className="relative group overflow-hidden border border-[#fd5da2]/30 rounded-xl p-8 bg-white shadow-md hover:scale-105 transition duration-300"
           >
 
             {/* Gradient Hover Layer */}
@@ -76,11 +72,11 @@ export function OurCommitment() {
 
             {/* Content */}
             <div className="relative z-10">
-              <h3 className="text-xl font-semibold text-white mb-4 group-hover:text-black transition">
+              <h3 className="text-xl font-semibold text-gray-900 mb-4 group-hover:text-black transition">
                 If it truly benefits lives
               </h3>
 
-              <p className="text-gray-400 group-hover:text-black transition">
+              <p className="text-gray-600 group-hover:text-black transition">
                 We proudly stand behind technologies that deliver proven clinical
                 value and improve healthcare outcomes.
               </p>

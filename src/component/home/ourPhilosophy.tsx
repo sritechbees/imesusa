@@ -2,8 +2,12 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { useState } from "react";
 
 export default function OurPhilosophy() {
+
+  const [active, setActive] = useState<number | null>(null);
+
   const philosophy = [
     {
       title: "Be Meaningful",
@@ -28,82 +32,91 @@ export default function OurPhilosophy() {
   ];
 
   return (
-    <section className="relative bg-slate-950 py-24 text-gray-300 overflow-hidden">
+    <section className="bg-white py-12">
 
-      {/* Background Glow */}
-      <div className="absolute top-0 left-0 w-96 h-96 bg-pink-500/20 blur-3xl rounded-full"></div>
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-purple-500/20 blur-3xl rounded-full"></div>
+      <div className="max-w-7xl mx-auto px-6">
 
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
-
-        {/* Section Title */}
-        <motion.div
-          initial={{ opacity: 0, y: 60 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7 }}
-          className="text-center mb-16"
-        >
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            Our <span className="text-pink-500">Philosophy</span>
+        {/* Title */}
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-4xl font-bold text-gray-900 mb-4">
+            Our <span className="text-[#fd5da2]">Philosophy</span>
           </h2>
 
-          <p className="max-w-2xl mx-auto text-gray-400">
+          <p className="max-w-2xl mx-auto text-gray-600">
             We believe medical technology should always serve people and
             deliver real benefits to healthcare providers and patients.
           </p>
-        </motion.div>
+        </div>
 
         {/* Cards */}
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
 
           {philosophy.map((item, index) => (
+
             <motion.div
               key={index}
+              onMouseEnter={() => setActive(index)}
+              onMouseLeave={() => setActive(null)}
               initial={{ opacity: 0, y: 60 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.2 }}
-              className="bg-white/5 backdrop-blur-md border border-pink-500/20 rounded-xl overflow-hidden hover:scale-105 transition duration-300 hover:border-pink-400"
+
+              className={`relative rounded-2xl overflow-hidden group transition duration-500
+              
+              ${active !== null && active !== index
+                ? "opacity-40 blur-[1px]"
+                : "opacity-100"
+              }
+
+              hover:scale-105`}
             >
 
               {/* Image */}
-              <div className="relative h-40 w-full">
+              <div className="relative h-60 w-full overflow-hidden">
+
                 <Image
                   src={item.img}
                   alt={item.title}
                   fill
-                  className="object-cover"
+                  className="object-cover transition duration-700 group-hover:scale-110"
                 />
+
+                {/* Dark Overlay */}
+                <div className="absolute inset-0 bg-black/40 group-hover:bg-black/30 transition"></div>
+
+                {/* Pink Overlay */}
+                <div className="absolute inset-0 bg-[#fd5da2]/0 group-hover:bg-[#fd5da2]/20 transition duration-500"></div>
+
               </div>
 
               {/* Content */}
-              <div className="p-6">
-                <h3 className="text-lg font-semibold text-white mb-2">
+              <div className="bg-white p-6 border border-gray-100 shadow-lg">
+
+                <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-[#fd5da2] transition">
                   {item.title}
                 </h3>
 
-                <p className="text-sm text-gray-400">
+                <p className="text-sm text-gray-600">
                   {item.desc}
                 </p>
+
               </div>
 
             </motion.div>
+
           ))}
 
         </div>
 
         {/* Quote */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ delay: 0.6 }}
-          className="text-center mt-16"
-        >
-          <p className="text-xl italic text-pink-400">
+        <div className="text-center mt-16">
+          <p className="text-xl italic text-[#fd5da2]">
             "Technology should serve people - not the other way around."
           </p>
-        </motion.div>
+        </div>
 
       </div>
+
     </section>
   );
 }

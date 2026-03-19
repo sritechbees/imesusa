@@ -3,50 +3,48 @@
 import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { motion } from "framer-motion";
 
 export default function FDACompliance() {
 
   useEffect(() => {
-    AOS.init({
-      duration: 1000,
-      once: true,
-    });
+    AOS.init({ duration: 1000, once: true });
   }, []);
 
   const items = [
     {
       title: "Regulatory Awareness",
-      desc: "Every device introduced by iMESUSA is carefully reviewed with awareness of regulatory requirements and compliance standards applicable within U.S. healthcare environments.",
+      desc: "Devices are evaluated under strict healthcare compliance frameworks.",
     },
     {
       title: "Clinical Validation",
-      desc: "We prioritize technologies that are supported by clinical research, real-world results, and proven therapeutic value.",
+      desc: "Backed by clinical research and real-world therapeutic results.",
     },
     {
       title: "Safety Standards",
-      desc: "Patient safety is a core principle. Devices are evaluated for safety, usability, and responsible integration into clinical and wellness practices.",
+      desc: "Focused on patient safety, usability, and risk mitigation.",
     },
     {
       title: "Responsible Implementation",
-      desc: "Healthcare providers maintain full responsibility for the appropriate use of medical technologies within their clinical, wellness, and regulatory frameworks.",
+      desc: "Ensuring proper usage aligned with medical guidelines.",
     },
   ];
 
   return (
-    <section className="relative bg-slate-950 py-24 px-4 sm:px-6">
+    <section className="relative bg-[#070b14] py-24 px-4 sm:px-6 overflow-hidden">
 
-      {/* Glow background */}
-      <div className="absolute top-10 left-10 w-72 h-72 bg-cyan-500/10 blur-[100px] rounded-full"></div>
-      <div className="absolute bottom-10 right-10 w-72 h-72 bg-blue-500/10 blur-[100px] rounded-full"></div>
+      {/* Background Glow */}
+      <div className="absolute top-0 left-0 w-[400px] h-[400px] bg-[#fd5da2]/20 blur-[120px] rounded-full"></div>
+      <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-pink-500/20 blur-[120px] rounded-full"></div>
 
-      <div className="max-w-7xl mx-auto relative z-10">
+      <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center relative z-10">
 
-        {/* Section Title */}
-        <div className="text-center mb-16">
+        {/* LEFT CONTENT */}
+        <div>
 
           <p
             data-aos="fade-up"
-            className="text-cyan-400 uppercase tracking-widest text-sm mb-4"
+            className="text-[#fd5da2] uppercase tracking-widest text-sm mb-3"
           >
             Regulatory Transparency
           </p>
@@ -54,7 +52,7 @@ export default function FDACompliance() {
           <h2
             data-aos="fade-up"
             data-aos-delay="200"
-            className="text-3xl md:text-4xl font-bold text-white mb-6"
+            className="text-4xl md:text-5xl font-bold text-white mb-6"
           >
             FDA & Compliance
           </h2>
@@ -62,52 +60,54 @@ export default function FDACompliance() {
           <p
             data-aos="fade-up"
             data-aos-delay="400"
-            className="max-w-3xl mx-auto text-gray-400 leading-relaxed"
+            className="text-gray-400 leading-relaxed max-w-md"
           >
-            iMESUSA is committed to introducing medical technologies with
-            strong clinical value, safety awareness, and regulatory
-            responsibility. Every technology we introduce is evaluated with
-            attention to compliance considerations and real-world healthcare
-            usability.
+            We follow a structured approach to ensure every technology meets
+            modern healthcare standards, safety requirements, and real-world usability.
           </p>
 
         </div>
 
-        {/* Compliance Cards */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {/* RIGHT TIMELINE */}
+        <div className="relative">
+
+          {/* Vertical Line */}
+          <div className="absolute left-5 top-0 w-[2px] h-full bg-white/10"></div>
 
           {items.map((item, index) => (
-            <div
+            <motion.div
               key={index}
-              data-aos="zoom-in"
-              data-aos-delay={index * 150}
-              className="bg-slate-900 border border-white/10 rounded-xl p-6 hover:border-cyan-400 transition duration-300"
+              data-aos="fade-up"
+              data-aos-delay={index * 200}
+              whileHover={{ x: 10 }}
+              className="relative flex items-start gap-6 mb-12 group"
             >
 
-              <h3 className="text-xl font-semibold text-white mb-3">
-                {item.title}
-              </h3>
+              {/* Dot */}
+              <div className="relative z-10">
+                <div className="w-10 h-10 rounded-full bg-[#fd5da2]/20 flex items-center justify-center border border-[#fd5da2]/40">
+                  <span className="text-[#fd5da2] font-bold">
+                    {index + 1}
+                  </span>
+                </div>
+              </div>
 
-              <p className="text-gray-400 text-sm leading-relaxed">
-                {item.desc}
-              </p>
+              {/* Content */}
+              <div className="bg-white/5 backdrop-blur-lg border border-white/10 rounded-xl p-5 w-full transition group-hover:border-[#fd5da2]/50">
 
-            </div>
+                <h3 className="text-lg font-semibold text-white mb-2 group-hover:text-[#fd5da2] transition">
+                  {item.title}
+                </h3>
+
+                <p className="text-gray-400 text-sm">
+                  {item.desc}
+                </p>
+
+              </div>
+
+            </motion.div>
           ))}
 
-        </div>
-
-        {/* Bottom Note */}
-        <div
-          data-aos="fade-up"
-          data-aos-delay="500"
-          className="mt-16 text-center max-w-3xl mx-auto"
-        >
-          <p className="text-gray-400 leading-relaxed">
-            Our goal is to ensure that healthcare providers have access to
-            technologies that are meaningful, safe, and responsibly
-            implemented within modern medical and wellness environments.
-          </p>
         </div>
 
       </div>

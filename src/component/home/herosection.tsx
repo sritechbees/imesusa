@@ -45,8 +45,8 @@ export default function HeroSection() {
     <Head>
       <title>International Medical Equipment Solution </title>
     </Head>
-    <section className="relative w-full h-[80vh] md:h-[90vh] overflow-hidden">
-
+    <section className="relative mt-16 text-center h-[90vh] md:h-[90vh] overflow-hidden">
+ 
       <AnimatePresence mode="wait">
         <motion.div
           key={slides[current].id}

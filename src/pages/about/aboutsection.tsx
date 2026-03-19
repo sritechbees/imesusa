@@ -20,6 +20,7 @@ export default function AboutHero() {
 
   return (
     <App_layout>
+      
       <Head>
         <title>International Medical Equipment Solution | About</title>
       </Head>
@@ -77,12 +78,12 @@ export default function AboutHero() {
             data-aos-delay="700"
             className="mt-10 flex flex-col sm:flex-row gap-4 justify-center"
           >
-            <Link href="/about/about">
+            <Link href="/resources/downloadcatalog">
             <button className="px-8 py-3 bg-[#fd5da2] text-white rounded-full font-semibold hover:scale-105 transition shadow-lg hover:shadow-[#fd5da2]/50">
               Explore Technologies
             </button></Link>
 
-          <Link href="/about/about">
+          <Link href="/about/aboutmore">
             <button className="px-8 py-3 border border-white text-white rounded-full hover:bg-white hover:text-[#fd5da2] transition">
               Learn More
             </button></Link>

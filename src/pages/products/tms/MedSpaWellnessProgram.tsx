@@ -29,85 +29,129 @@ export default function MedSpaWellnessProgram() {
   ];
 
   return (
-    <section className="bg-gradient-to-b from-white to-gray-50 overflow-hidden py-24">
+    <section className="py-16 bg-white overflow-hidden">
 
-      <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
+      <div className="max-w-7xl mx-auto px-6">
 
-        {/* Left Content */}
+        {/* 🔹 TOP CENTER TITLE */}
         <motion.div
-          initial={{ opacity:0, x:-40 }}
-          whileInView={{ opacity:1, x:0 }}
-          transition={{ duration:0.7 }}
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7 }}
+          viewport={{ once: true }}
+          className="text-center mb-16"
         >
-          <h2 className="text-4xl font-bold text-gray-900 mb-6">
-            Brain & Mental Wellness Program for MedSpas
+          <p className="text-sm uppercase tracking-widest text-[#fd5da2] font-semibold mb-4">
+            Wellness Program
+          </p>
+
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 leading-tight">
+            Brain & Mental Wellness <br />
+            <span className="text-[#fd5da2]">
+              Program for MedSpas
+            </span>
           </h2>
-
-          <p className="text-gray-600 text-lg leading-relaxed mb-6">
-            Transcranial Magnetic Stimulation (TMS) is introduced as a
-            non-invasive brain wellness technology designed for modern
-            MedSpa environments. It allows wellness centers to expand
-            beyond aesthetic treatments into mental and emotional
-            wellness services.
-          </p>
-
-          <p className="text-gray-600 leading-relaxed mb-6">
-            This program focuses on wellness-focused, cash-based care
-            delivered in a calm MedSpa environment rather than a
-            traditional psychiatric clinic.
-          </p>
-
-          <p className="text-gray-600 leading-relaxed">
-            In this model, TMS is positioned as a brain wellness service
-            supporting clarity, emotional balance, and mental focus.
-          </p>
-
         </motion.div>
 
-        {/* Right Wellness Cards */}
-        <div className="grid md:grid-cols-2 gap-6">
+        {/* 🔸 MAIN CONTENT */}
+        <div className="grid lg:grid-cols-2 gap-16 items-start">
 
-          {wellnessPoints.map((item, index) => {
-            const Icon = item.icon;
+          {/* 📝 LEFT TEXT */}
+<motion.div
+  initial={{ opacity: 0, x: -60 }}
+  whileInView={{ opacity: 1, x: 0 }}
+  transition={{ duration: 0.7 }}
+  viewport={{ once: true }}
+  className="space-y-6"
+>
 
-            return (
-              <motion.div
-                key={index}
-                initial={{ opacity:0, y:30 }}
-                whileInView={{ opacity:1, y:0 }}
-                transition={{ delay:index * 0.2 }}
-                className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition"
-              >
-                <div className="w-12 h-12 flex items-center justify-center rounded-lg bg-purple-100 mb-4">
-                  <Icon className="text-purple-600 w-6 h-6"/>
-                </div>
+  {/* 🔹 SMALL TITLE */}
+  <div className="flex items-center gap-3 mt-20">
+    <span className="w-8  h-[2px] bg-[#fd5da2]"></span>
+    <p className="text-sm uppercase tracking-widest text-[#fd5da2] font-semibold">
+    Wellness Overview
+    </p>
+  </div>
 
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                  {item.title}
-                </h3>
+  {/* CONTENT */}
+  <p className="text-gray-600 text-lg leading-relaxed">
+    Transcranial Magnetic Stimulation (TMS) is introduced as a
+    non-invasive brain wellness technology designed for modern
+    MedSpa environments. It allows wellness centers to expand
+    beyond aesthetic treatments into mental and emotional
+    wellness services.
+  </p>
 
-                <p className="text-gray-600 text-sm leading-relaxed">
-                  {item.desc}
-                </p>
-              </motion.div>
-            )
-          })}
+  <p className="text-gray-600 leading-relaxed">
+    This program focuses on wellness-focused, cash-based care
+    delivered in a calm MedSpa environment rather than a
+    traditional psychiatric clinic.
+  </p>
+
+  <p className="text-gray-600 leading-relaxed">
+    In this model, TMS is positioned as a brain wellness service
+    supporting clarity, emotional balance, and mental focus.
+  </p>
+
+</motion.div>
+
+          {/* 💎 RIGHT STACK CARDS */}
+          <div className="space-y-6">
+
+            {wellnessPoints.map((item, index) => {
+              const Icon = item.icon;
+
+              return (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, x: 60 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ delay: index * 0.15 }}
+                  viewport={{ once: true }}
+                  whileHover={{ scale: 1.03 }}
+                  className="flex items-start gap-4 p-6 border-l-4 border-[#fd5da2] bg-gray-50 rounded-xl hover:bg-[#fd5da2]/5 transition"
+                >
+
+                  {/* Icon */}
+                  <div className="flex-shrink-0 w-12 h-12 flex items-center justify-center rounded-lg bg-[#fd5da2]/10">
+                    <Icon className="text-[#fd5da2] w-6 h-6" />
+                  </div>
+
+                  {/* Content */}
+                  <div>
+                    <h3 className="text-lg font-semibold text-gray-900 mb-1">
+                      {item.title}
+                    </h3>
+
+                    <p className="text-gray-600 text-sm leading-relaxed">
+                      {item.desc}
+                    </p>
+                  </div>
+
+                </motion.div>
+              );
+            })}
+
+          </div>
 
         </div>
 
+        {/* ⚠️ DISCLAIMER */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.3 }}
+          viewport={{ once: true }}
+          className="max-w-4xl mx-auto mt-20 text-center"
+        >
+          <p className="text-sm text-gray-500 leading-relaxed">
+            The MedSpa is responsible for determining whether TMS may be used
+            for wellness purposes and assumes full responsibility for all
+            related business, regulatory, and legal compliance.
+          </p>
+        </motion.div>
+
       </div>
-
-      {/* Disclaimer */}
-      <div className="max-w-5xl mx-auto px-6 mt-16 text-center">
-
-        <p className="text-sm text-gray-500 leading-relaxed">
-          The MedSpa is responsible for determining whether TMS may be used
-          for wellness purposes and assumes full responsibility for all
-          related business, regulatory, and legal compliance.
-        </p>
-
-      </div>
-
     </section>
   );
 }

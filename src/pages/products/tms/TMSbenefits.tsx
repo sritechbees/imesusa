@@ -39,19 +39,21 @@ export default function KeyBenefitsFeatures() {
   ];
 
   return (
-    <section className="bg-gray-50 py-24">
+    <section className="bg-white py-16">
 
       <div className="max-w-7xl mx-auto px-6">
 
-        {/* Section Heading */}
+        {/* 🔹 HEADING */}
         <motion.div
-          initial={{ opacity:0, y:40 }}
-          whileInView={{ opacity:1, y:0 }}
-          transition={{ duration:0.6 }}
-          className="text-center mb-16"
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="text-center mb-20"
         >
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">
-            Key Benefits & Features
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            Key Benefits &{" "}
+            <span className="text-[#fd5da2]">Features</span>
           </h2>
 
           <p className="text-gray-600 text-lg max-w-3xl mx-auto">
@@ -62,8 +64,8 @@ export default function KeyBenefitsFeatures() {
           </p>
         </motion.div>
 
-        {/* Features Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {/* 🌊 WATERFALL LAYOUT */}
+        <div className="columns-1 sm:columns-2 lg:columns-3 gap-10 space-y-10">
 
           {features.map((item, index) => {
             const Icon = item.icon;
@@ -71,22 +73,33 @@ export default function KeyBenefitsFeatures() {
             return (
               <motion.div
                 key={index}
-                initial={{ opacity:0, y:40 }}
-                whileInView={{ opacity:1, y:0 }}
-                transition={{ delay:index * 0.2 }}
-                className="bg-white p-8 rounded-2xl shadow-md hover:shadow-xl transition"
+                initial={{ opacity: 0, y: 60 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.15 }}
+                viewport={{ once: true }}
+                className="group break-inside-avoid mb-10"
               >
-                <div className="w-14 h-14 flex items-center justify-center rounded-xl bg-purple-100 mb-6">
-                  <Icon className="text-purple-600 w-7 h-7" />
+
+                {/* ICON + TITLE */}
+                <div className="flex items-start gap-4">
+
+                  <div className="w-12 h-12 flex items-center justify-center rounded-full border border-gray-200 group-hover:border-[#fd5da2] transition">
+                    <Icon className="w-6 h-6 text-gray-700 group-hover:text-[#fd5da2] transition" />
+                  </div>
+
+                  <h3 className="text-lg font-semibold text-gray-900 group-hover:text-[#fd5da2] transition">
+                    {item.title}
+                  </h3>
+
                 </div>
 
-                <h3 className="text-xl font-semibold text-gray-900 mb-3">
-                  {item.title}
-                </h3>
-
-                <p className="text-gray-600 leading-relaxed text-sm">
+                {/* DESCRIPTION */}
+                <p className="text-gray-600 mt-4 leading-relaxed text-sm pl-16">
                   {item.desc}
                 </p>
+
+                {/* HOVER LINE */}
+                <div className="mt-4 ml-16 h-[2px] w-0 bg-[#fd5da2] group-hover:w-20 transition-all duration-300"></div>
 
               </motion.div>
             );

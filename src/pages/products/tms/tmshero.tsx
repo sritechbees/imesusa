@@ -124,23 +124,7 @@ export default function TMSHero() {
 
       </div>
 
-      {/* 💎 Feature Cards */}
-      <div className="max-w-6xl mx-auto px-6 mt-20 grid grid-cols-2 md:grid-cols-3 gap-6 text-center">
-
-        {["Non-Invasive", "No Medication", "No Downtime"].map((item, i) => (
-          <motion.div
-            key={i}
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: i * 0.2 }}
-            className="bg-white/10 backdrop-blur-xl rounded-xl py-4 hover:scale-105 transition shadow-lg"
-          >
-            {item}
-          </motion.div>
-        ))}
-
-      </div>
-
+     
     </section>
   );
 }

@@ -3,29 +3,69 @@
 import App_layout from "@/component/layout/app_layout";
 import Head from "next/head";
 import Image from "next/image";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 export default function ContactSection() {
+
+  const [showToast, setShowToast] = useState(false);
+
+  const initialForm = {
+    name: "",
+    clinic: "",
+    role: "",
+    email: "",
+    phone: "",
+    message: "",
+  };
+
+  const [formData, setFormData] = useState(initialForm);
+
+  const handleChange = (e: any) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleSubmit = (e: any) => {
+    e.preventDefault();
+
+    setShowToast(true);
+    setFormData(initialForm);
+
+    setTimeout(() => setShowToast(false), 3000);
+  };
+
   return (
     <App_layout>
-        <Head>
+      <Head>
         <title>International Medical Equipment Solution | Contact</title>
       </Head>
 
-      <section className="relative py-28 bg-gradient-to-br from-white via-blue-50 to-slate-100 overflow-hidden font-[Poppins]">
+      {/* ⚪ WHITE BACKGROUND */}
+      <section className="relative py-28 bg-white overflow-hidden font-[Poppins]">
 
-        {/* Soft AI Glow Background */}
-        <div className="absolute top-0 right-0 w-96 h-96 bg-blue-200 blur-3xl rounded-full opacity-20"></div>
-        <div className="absolute bottom-0 left-0 w-96 h-96 bg-cyan-200 blur-3xl rounded-full opacity-20"></div>
+        <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
 
-        <div className="relative max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+          {/* 🔹 LEFT SIDE */}
+          <motion.div
+            initial={{ opacity: 0, x: -60 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.7 }}
+            className="space-y-8"
+          >
 
-          {/* LEFT INFO SECTION */}
-          <div data-aos="fade-right" className="space-y-8">
-
+            {/* TITLE */}
             <div>
-              <h2 className="text-4xl md:text-5xl font-bold text-blue-950">
-                Let’s Connect
+              <p className="text-sm uppercase tracking-widest text-[#fd5da2] mb-3 font-semibold">
+                Contact Us
+              </p>
+
+              <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
+                Let’s <span className="text-[#fd5da2]">Connect</span>
               </h2>
+
               <p className="mt-6 text-gray-600 text-lg leading-relaxed">
                 We welcome inquiries from physicians, clinics, MedSpas,
                 and healthcare organizations seeking advanced,
@@ -33,33 +73,23 @@ export default function ContactSection() {
               </p>
             </div>
 
-            {/* Info Cards */}
-            <div className="space-y-6">
-
-              <div className="bg-white shadow-lg rounded-2xl p-6 border border-blue-100">
-                <h4 className="font-semibold text-blue-900">
-                  📍 Professional Consultation
-                </h4>
-                <p className="text-sm text-gray-600 mt-2">
-                  Personalized guidance tailored to your clinical or
-                  wellness practice.
-                </p>
-              </div>
-
-              <div className="bg-white shadow-lg rounded-2xl p-6 border border-blue-100">
-                <h4 className="font-semibold text-blue-900">
-                  ⚡ Fast Response
-                </h4>
-                <p className="text-sm text-gray-600 mt-2">
-                  Our team reviews inquiries promptly and responds
-                  with detailed information.
-                </p>
-              </div>
-
+            {/* STRONG CONTENT (instead of cards) */}
+            <div className="space-y-4">
+              {[
+                "Professional consultation tailored to your practice",
+                "Fast response from our expert team",
+                "Advanced medical technology guidance",
+                "Support for partnerships and distribution",
+              ].map((item, i) => (
+                <div key={i} className="flex items-start gap-3">
+                  <span className="w-2 h-2 mt-2 bg-[#fd5da2] rounded-full"></span>
+                  <p className="text-gray-700 text-sm">{item}</p>
+                </div>
+              ))}
             </div>
 
-            {/* Optional Image */}
-            <div className="rounded-3xl overflow-hidden shadow-xl">
+            {/* IMAGE */}
+            <div className="rounded-3xl overflow-hidden">
               <Image
                 src="/about/contact.jpg"
                 alt="Medical Consultation"
@@ -69,91 +99,88 @@ export default function ContactSection() {
               />
             </div>
 
-          </div>
+          </motion.div>
 
-          {/* RIGHT FORM SECTION */}
-          <div data-aos="fade-left">
-            <div className="bg-white shadow-2xl rounded-3xl p-10 border border-blue-100">
+          {/* 🔸 RIGHT FORM */}
+          <motion.div
+            initial={{ opacity: 0, x: 60 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.7 }}
+          >
+            <div className="bg-white shadow-lg rounded-3xl p-10 border border-gray-200">
 
               <h3 className="text-2xl font-semibold text-gray-900 mb-6">
-                Contact / Inquiry
+                Contact
               </h3>
 
-              <form className="space-y-6">
+              <form className="space-y-6" onSubmit={handleSubmit}>
 
-                <div>
-                  <label className="block text-sm font-medium text-gray-700">
-                    Full Name
-                  </label>
-                  <input
-                    type="text"
-                    className="mt-2 w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-600 outline-none transition"
-                    placeholder="Enter your full name"
-                  />
-                </div>
+                <input
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  required
+                  placeholder="Full Name"
+                  className="w-full px-4 py-3 border rounded-xl focus:ring-2 focus:ring-[#fd5da2] outline-none"
+                />
 
-                <div>
-                  <label className="block text-sm font-medium text-gray-700">
-                    Clinic / Organization
-                  </label>
-                  <input
-                    type="text"
-                    className="mt-2 w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-600 outline-none transition"
-                    placeholder="Hospital, Clinic, MedSpa..."
-                  />
-                </div>
+                <input
+                  name="clinic"
+                  value={formData.clinic}
+                  onChange={handleChange}
+                  required
+                  placeholder="Clinic / Organization"
+                  className="w-full px-4 py-3 border rounded-xl focus:ring-2 focus:ring-[#fd5da2] outline-none"
+                />
 
-                <div>
-                  <label className="block text-sm font-medium text-gray-700">
-                    Your Role
-                  </label>
-                  <select className="mt-2 w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-600 outline-none transition">
-                    <option>Select Role</option>
-                    <option>Physician (MD / DO)</option>
-                    <option>Nurse Practitioner / PA</option>
-                    <option>Clinic Administrator</option>
-                    <option>MedSpa Owner</option>
-                    <option>IPA / Health Planner</option>
-                    <option>Other</option>
-                  </select>
-                </div>
+                <select
+                  name="role"
+                  value={formData.role}
+                  onChange={handleChange}
+                  required
+                  className="w-full px-4 py-3 border rounded-xl focus:ring-2 focus:ring-[#fd5da2] outline-none"
+                >
+                  <option value="">Select Role</option>
+                  <option>Physician (MD / DO)</option>
+                  <option>Nurse Practitioner / PA</option>
+                  <option>Clinic Administrator</option>
+                  <option>MedSpa Owner</option>
+                  <option>IPA / Health Planner</option>
+                  <option>Other</option>
+                </select>
 
-                <div>
-                  <label className="block text-sm font-medium text-gray-700">
-                    Email Address
-                  </label>
-                  <input
-                    type="email"
-                    className="mt-2 w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-600 outline-none transition"
-                    placeholder="Enter your email"
-                  />
-                </div>
+                <input
+                  type="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
+                  placeholder="Email Address"
+                  className="w-full px-4 py-3 border rounded-xl focus:ring-2 focus:ring-[#fd5da2] outline-none"
+                />
 
-                <div>
-                  <label className="block text-sm font-medium text-gray-700">
-                    Phone Number
-                  </label>
-                  <input
-                    type="text"
-                    className="mt-2 w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-600 outline-none transition"
-                    placeholder="Enter phone number"
-                  />
-                </div>
+                <input
+                  name="phone"
+                  value={formData.phone}
+                  onChange={handleChange}
+                  required
+                  placeholder="Phone Number"
+                  className="w-full px-4 py-3 border rounded-xl focus:ring-2 focus:ring-[#fd5da2] outline-none"
+                />
 
-                <div>
-                  <label className="block text-sm font-medium text-gray-700">
-                    Message
-                  </label>
-                  <textarea
-                    rows={4}
-                    className="mt-2 w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-600 outline-none transition"
-                    placeholder="Write your inquiry..."
-                  ></textarea>
-                </div>
+                <textarea
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  required
+                  rows={4}
+                  placeholder="Message"
+                  className="w-full px-4 py-3 border rounded-xl focus:ring-2 focus:ring-[#fd5da2] outline-none"
+                ></textarea>
 
                 <button
                   type="submit"
-                  className="w-full py-3 bg-blue-900 text-white rounded-xl font-medium shadow-md hover:bg-blue-700 transition duration-300"
+                  className="w-full py-3 bg-[#fd5da2] text-white rounded-xl hover:scale-105 transition"
                 >
                   Submit Inquiry
                 </button>
@@ -161,9 +188,26 @@ export default function ContactSection() {
               </form>
 
             </div>
-          </div>
+          </motion.div>
 
         </div>
+
+        {/* 🎉 SUCCESS POPUP */}
+        <AnimatePresence>
+          {showToast && (
+            <motion.div
+              initial={{ opacity: 0, y: -50, x: 50 }}
+              animate={{ opacity: 1, y: 0, x: 0 }}
+              exit={{ opacity: 0, y: -50 }}
+              className="fixed top-6 right-6 bg-white border border-[#fd5da2] shadow-lg px-6 py-4 rounded-xl z-50"
+            >
+              <p className="text-sm font-medium text-gray-800">
+                ✅ Thank you! Your message has been sent.
+              </p>
+            </motion.div>
+          )}
+        </AnimatePresence>
+
       </section>
     </App_layout>
   );

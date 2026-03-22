@@ -1,80 +1,108 @@
 "use client";
 
-import Image from "next/image";
+import { useEffect } from "react";
 import { motion } from "framer-motion";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import App_layout from "@/component/layout/app_layout";
+import Link from "next/link";
+
 import SalusTalentPro from "./salus_talentpro";
 import PainManagement from "./PainManagement";
 import TechnologyFeatures from "./TechnologyFeatures";
 import ClinicalBenefits from "./ClinicalBenefits";
 import HealthcareSettings from "./HealthcareSettings";
-import Link from "next/link";
 
 export default function HeroSection() {
+
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      once: true,
+    });
+  }, []);
+
   return (
     <App_layout>
-    <section className="bg-gradient-to-r from-blue-50 to-white py-20 mt-10">
-      <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-10 items-center">
 
-        {/* Text */}
+      {/* HERO */}
+      <section className="relative h-[90vh] mt-20 flex items-center justify-center overflow-hidden">
+
+        {/* 🔥 Background Image */}
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{
+            backgroundImage: "url('/about/product2.png')",
+          }}
+        ></div>
+
+        {/* 💖 Pink Overlay Theme */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#1a0b14]/90 via-[#1a0b14]/80 to-[#1a0b14]/90"></div>
+
+        {/* ✨ Content */}
         <motion.div
-          initial={{ opacity: 0, x: -40 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.7 }}
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          data-aos="fade-up"
+          className="relative z-10 text-center max-w-3xl px-6"
         >
-          <h1 className="text-5xl font-bold leading-tight text-gray-900">
-            SALUS TALENT PRO
+
+          {/* Tag */}
+          <span className="inline-block px-4 py-1 text-sm rounded-full bg-[#fd5da2]/20 text-[#fd5da2]">
+            Advanced Medical Device
+          </span>
+
+          {/* Title */}
+          <h1 className="mt-6 text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight">
+            SALUS Talent Pro
           </h1>
 
-          <p className="mt-4 text-xl text-blue-600 font-semibold">
+          {/* Subtitle */}
+          <p className="mt-4 text-lg sm:text-xl text-[#fd5da2] font-medium">
             Premium Electromagnetic Field Stimulator
           </p>
 
-          <p className="mt-6 text-gray-600 leading-relaxed">
-            SALUS Talent Pro is a professional-grade therapeutic device
-            designed to deliver precise pain relief through advanced
-            electromagnetic stimulation technology.
+          {/* Description */}
+          <p className="mt-6 text-gray-300 leading-relaxed">
+            Experience next-generation pain relief with precision electromagnetic therapy.
+            Designed for both localized and full-body treatments, delivering clinical-grade
+            performance for modern healthcare environments.
           </p>
 
-          <p className="mt-4 text-gray-600">
-            The device uses two specialized applicators that enable treatment
-            of both localized and overall body areas, making it highly
-            effective for modern pain management and wellness programs.
-          </p>
+          {/* Buttons */}
+          <div className="flex flex-wrap justify-center gap-4 mt-8">
 
-          <div className="flex gap-4 mt-8">
-           
-<Link href="/resources/downloadcatalog">
-            <button className="border border-blue-600 text-blue-600 px-6 py-3 rounded-lg hover:bg-blue-50 transition">
-              View Brochures
-            </button></Link>
+            {/* Primary Button */}
+            <Link href="/resources/downloadcatalog">
+              <button className="px-6 py-3 rounded-xl text-white font-medium
+                bg-[#fd5da2]
+                hover:bg-[#e14c8f]
+                shadow-lg shadow-[#fd5da2]/40
+                hover:scale-105 transition duration-300">
+                View Brochure
+              </button>
+            </Link>
+
+            {/* Secondary Button */}
+            <button className="px-6 py-3 rounded-xl border border-[#fd5da2] text-[#fd5da2]
+              hover:bg-[#fd5da2]/10 transition duration-300">
+              Learn More
+            </button>
+
           </div>
+
         </motion.div>
 
-        {/* Image */}
-        <motion.div
-          initial={{ opacity: 0, x: 40 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.7 }}
-        >
-          <Image
-            src="/about/product2.png"
-            alt="SALUS Talent Pro Device"
-            width={500}
-            height={400}
-            className="rounded-xl shadow-xl"
-          />
-        </motion.div>
+      </section>
 
-      </div>
-     
-    </section>
-     <PainManagement/>
-<TechnologyFeatures/>
-<ClinicalBenefits/>
-<HealthcareSettings/>
+      {/* OTHER SECTIONS */}
+      <PainManagement/>
+      <TechnologyFeatures/>
+      <ClinicalBenefits/>
+      <HealthcareSettings/>
+      <SalusTalentPro/>
 
-    <SalusTalentPro/>
     </App_layout>
   );
 }

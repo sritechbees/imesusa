@@ -6,7 +6,7 @@ import ContactSection from "./getintouch";
 
 export default function ContactHero() {
   return (
-    <App_layout>
+ <App_layout>
     <section
       className="relative h-[90vh] mt-16 flex items-center justify-center text-center text-white overflow-hidden"
     >
@@ -53,6 +53,9 @@ export default function ContactHero() {
 
     </section>
 <ContactSection/>
-    </App_layout>
+
+</App_layout>
+
+
   );
 }

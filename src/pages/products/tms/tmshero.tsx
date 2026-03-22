@@ -105,7 +105,7 @@ export default function TMSHero() {
             variants={fadeUp}
             className="flex flex-wrap gap-4"
           >
-            <Link href="/resources/viewresourse">
+            <Link href="/products/tms/tmsprogram">
               <button className="relative group bg-white text-purple-700 font-semibold px-6 py-3 rounded-lg overflow-hidden shadow-lg">
                 <span className="relative z-10">Explore Program</span>
 

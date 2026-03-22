@@ -38,7 +38,7 @@ export default function ContactSection() {
   };
 
   return (
-    <App_layout>
+    <div>
       <Head>
         <title>International Medical Equipment Solution | Contact</title>
       </Head>
@@ -209,6 +209,7 @@ export default function ContactSection() {
         </AnimatePresence>
 
       </section>
-    </App_layout>
+  </div>
+
   );
 }

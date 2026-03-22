@@ -34,11 +34,11 @@ export default function Downloadcatalog() {
 
   return (
     <App_layout>
-    <section className="relative bg-slate-950 py-24 px-4 sm:px-6">
+    <section className="relative bg-slate-950 py-24 mt-4 px-4 sm:px-6">
 
       {/* Background Glow */}
-      <div className="absolute top-10 left-10 w-72 h-72 bg-cyan-500/10 blur-[100px] rounded-full"></div>
-      <div className="absolute bottom-10 right-10 w-72 h-72 bg-blue-500/10 blur-[100px] rounded-full"></div>
+      <div className="absolute top-10 left-10 w-72 h-72 bg-[#fd5da2]/10 blur-[100px] rounded-full"></div>
+      <div className="absolute bottom-10 right-10 w-72 h-72 bg-[#fd5da2]/10 blur-[100px] rounded-full"></div>
 
       <div className="max-w-7xl mx-auto relative z-10">
 
@@ -47,7 +47,7 @@ export default function Downloadcatalog() {
 
           <p
             data-aos="fade-up"
-            className="text-cyan-400 uppercase tracking-widest text-sm mb-3"
+            className="text-[#fd5da2] uppercase tracking-widest text-sm mb-3"
           >
             Resources
           </p>
@@ -79,7 +79,7 @@ export default function Downloadcatalog() {
               key={index}
               data-aos="zoom-in"
               data-aos-delay={index * 150}
-              className="bg-slate-900 border border-white/10 rounded-xl p-6 hover:border-cyan-400 transition"
+              className="bg-slate-900 border border-white/10 rounded-xl p-6 hover:border-[#fd5da2] transition"
             >
 
               <h3 className="text-xl font-semibold text-white mb-3">
@@ -93,9 +93,9 @@ export default function Downloadcatalog() {
               <a
                 href={item.file}
                 download
-                className="inline-block px-6 py-2 bg-cyan-500 hover:bg-cyan-400 text-white rounded-md text-sm font-medium transition"
+                className="inline-block px-6 py-2 bg-[#fd5da2] hover:bg-[#e14c8c] text-white rounded-md text-sm font-medium transition"
               >
-                Download 
+                Download
               </a>
 
             </div>

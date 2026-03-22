@@ -18,7 +18,7 @@ const conditions = [
   {
     title: "Shoulder Pain",
     desc: "Improves joint flexibility and reduces stiffness effectively.",
-    img: "/product/shoulder Pain1.jpg",
+    img: "/product/Shoulder_Pain1.jpg",
   },
   {
     title: "Joint Pain",

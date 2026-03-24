@@ -85,10 +85,11 @@ export default function HeroSection() {
             </Link>
 
             {/* Secondary Button */}
+            <Link href="/products/Salus_Talentpro/learnmore">
             <button className="px-6 py-3 rounded-xl border border-[#fd5da2] text-[#fd5da2]
               hover:bg-[#fd5da2]/10 transition duration-300">
               Learn More
-            </button>
+            </button></Link>
 
           </div>
 
@@ -97,11 +98,13 @@ export default function HeroSection() {
       </section>
 
       {/* OTHER SECTIONS */}
+        
+       <SalusTalentPro/>
       <PainManagement/>
       <TechnologyFeatures/>
       <ClinicalBenefits/>
       <HealthcareSettings/>
-      <SalusTalentPro/>
+  
 
     </App_layout>
   );

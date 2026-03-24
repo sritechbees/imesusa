@@ -9,8 +9,9 @@ export default function FDACompliance() {
 
   useEffect(() => {
     AOS.init({
-      duration: 1000,
+      duration: 900,
       once: true,
+      easing: "ease-out-cubic",
     });
   }, []);
 
@@ -35,85 +36,95 @@ export default function FDACompliance() {
 
   return (
     <App_layout>
-    <section className="relative bg-slate-950 py-24 px-4 sm:px-6">
+      <section className="relative py-20 mt-12 md:py-24 px-4 sm:px-6 bg-slate-950 overflow-hidden">
 
-      {/* Glow background */}
-      <div className="absolute top-10 left-10 w-72 h-72 bg-cyan-500/10 blur-[100px] rounded-full"></div>
-      <div className="absolute bottom-10 right-10 w-72 h-72 bg-blue-500/10 blur-[100px] rounded-full"></div>
+        {/* 🔥 Glow Background */}
+        <div className="absolute top-0 left-0 w-72 h-72 bg-[#fd5da2]/20 blur-[120px] rounded-full"></div>
+        <div className="absolute bottom-0 right-0 w-72 h-72 bg-pink-400/20 blur-[120px] rounded-full"></div>
 
-      <div className="max-w-7xl mx-auto relative z-10">
+        <div className="max-w-7xl mx-auto relative z-10">
 
-        {/* Section Title */}
-        <div className="text-center mb-16">
+          {/* 🔥 TITLE */}
+          <div className="text-center mb-14 md:mb-16">
 
-          <p
-            data-aos="fade-up"
-            className="text-cyan-400 uppercase tracking-widest text-sm mb-4"
-          >
-            Regulatory Transparency
-          </p>
+            <p
+              data-aos="fade-up"
+              className="text-[#fd5da2] uppercase tracking-widest text-xs sm:text-sm mb-3"
+            >
+              Regulatory Transparency
+            </p>
 
-          <h2
-            data-aos="fade-up"
-            data-aos-delay="200"
-            className="text-3xl md:text-4xl font-bold text-white mb-6"
-          >
-            FDA & Compliance
-          </h2>
+            <h2
+              data-aos="fade-up"
+              data-aos-delay="150"
+              className="text-2xl sm:text-3xl md:text-4xl font-bold mb-5 leading-tight"
+            >
+              <span className="text-white">FDA &</span>{" "}
+              <span className="bg-gradient-to-r from-[#fd5da2] to-pink-400 bg-clip-text text-transparent">
+                Compliance
+              </span>
+            </h2>
 
-          <p
+            <p
+              data-aos="fade-up"
+              data-aos-delay="300"
+              className="max-w-2xl md:max-w-3xl mx-auto text-gray-400 text-sm sm:text-base leading-relaxed"
+            >
+              iMESUSA is committed to introducing medical technologies with strong
+              clinical value, safety awareness, and regulatory responsibility.
+            </p>
+
+          </div>
+
+          {/* 🔥 CARDS */}
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-6">
+
+            {items.map((item, index) => (
+              <div
+                key={index}
+                data-aos="fade-up"
+                data-aos-delay={index * 120}
+                className="group relative p-5 md:p-6 rounded-xl 
+                bg-slate-900/80 backdrop-blur-md
+                border border-white/10
+                transition-all duration-500
+                hover:border-[#fd5da2]
+                hover:-translate-y-2
+                hover:bg-slate-900"
+              >
+
+                <div className="relative z-10">
+
+                  <h3 className="text-base sm:text-lg md:text-xl font-semibold mb-2 
+                  text-white group-hover:text-[#fd5da2] transition">
+                    {item.title}
+                  </h3>
+
+                  <p className="text-gray-400 text-xs sm:text-sm leading-relaxed">
+                    {item.desc}
+                  </p>
+
+                </div>
+
+              </div>
+            ))}
+
+          </div>
+
+          {/* 🔥 BOTTOM NOTE */}
+          <div
             data-aos="fade-up"
             data-aos-delay="400"
-            className="max-w-3xl mx-auto text-gray-400 leading-relaxed"
+            className="mt-14 md:mt-16 text-center max-w-2xl md:max-w-3xl mx-auto"
           >
-            iMESUSA is committed to introducing medical technologies with
-            strong clinical value, safety awareness, and regulatory
-            responsibility. Every technology we introduce is evaluated with
-            attention to compliance considerations and real-world healthcare
-            usability.
-          </p>
+            <p className="text-gray-400 text-sm sm:text-base leading-relaxed">
+              Our goal is to ensure that healthcare providers have access to
+              technologies that are meaningful, safe, and responsibly implemented.
+            </p>
+          </div>
 
         </div>
-
-        {/* Compliance Cards */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-
-          {items.map((item, index) => (
-            <div
-              key={index}
-              data-aos="zoom-in"
-              data-aos-delay={index * 150}
-              className="bg-slate-900 border border-white/10 rounded-xl p-6 hover:border-cyan-400 transition duration-300"
-            >
-
-              <h3 className="text-xl font-semibold text-white mb-3">
-                {item.title}
-              </h3>
-
-              <p className="text-gray-400 text-sm leading-relaxed">
-                {item.desc}
-              </p>
-
-            </div>
-          ))}
-
-        </div>
-
-        {/* Bottom Note */}
-        <div
-          data-aos="fade-up"
-          data-aos-delay="500"
-          className="mt-16 text-center max-w-3xl mx-auto"
-        >
-          <p className="text-gray-400 leading-relaxed">
-            Our goal is to ensure that healthcare providers have access to
-            technologies that are meaningful, safe, and responsibly
-            implemented within modern medical and wellness environments.
-          </p>
-        </div>
-
-      </div>
-    </section>
+      </section>
     </App_layout>
   );
 }

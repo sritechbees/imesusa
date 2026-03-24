@@ -13,7 +13,7 @@ export function OurCommitment() {
           initial={{ opacity: 0, y: 60 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
-          className="text-4xl md:text-5xl font-bold text-gray-900 mb-6"
+          className="text-4xl md:text-4xl font-bold text-gray-900 mb-6"
         >
           Our <span className="text-[#fd5da2]">Commitment</span>
         </motion.h2>

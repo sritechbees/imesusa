@@ -6,7 +6,7 @@ const testimonials = [
   {
     name: "Dr. Michael Carter",
     hospital: "New York Medical Center",
-    image: "/about/testimonial.jpg",
+    image: "/about/testimonial1.jpg",
     feedback:
       "This technology has significantly improved patient recovery rates and treatment precision.",
   },
@@ -20,7 +20,7 @@ const testimonials = [
   {
     name: "Dr. Daniel Lee",
     hospital: "Boston Wellness Hospital",
-    image: "/about/testimonial.jpg",
+    image: "/about/testimonial2.jpg",
     feedback:
       "Highly effective technology that enhances patient care and treatment outcomes.",
   },
@@ -28,7 +28,7 @@ const testimonials = [
 
 export default function DoctorTestimonials() {
   return (
-    <section className="py-16 bg-white">
+    <section className="py-12 mb-8 bg-white">
 
       <div className="max-w-7xl mx-auto px-6">
 

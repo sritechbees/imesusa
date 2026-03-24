@@ -227,13 +227,17 @@ export default function Aboutmore() {
 
         <div className="max-w-4xl mx-auto text-center">
 
-          <h2
-            data-aos="fade-up"
-            className="text-2xl md:text-4xl font-bold text-gray-900 dark:text-white mb-6"
-          >
-            Our Commitment
-          </h2>
-
+         <h2
+  data-aos="fade-up"
+  className="text-2xl md:text-4xl font-bold mb-6"
+>
+  <span className="text-gray-900 dark:text-white group-hover:text-gray-900">
+    Our
+  </span>{" "}
+  <span className="bg-gradient-to-r from-[#fd5da2] to-pink-400 bg-clip-text text-transparent">
+    Commitment
+  </span>
+</h2>
           <p
             data-aos="fade-up"
             data-aos-delay="200"
@@ -247,7 +251,7 @@ export default function Aboutmore() {
           <div className="space-y-3">
 
             <p data-aos="fade-up" className="text-gray-700 dark:text-gray-300">
-              If a technology does not help people — we do not introduce it.
+              If a technology does not help people - we do not introduce it.
             </p>
 
             <p
@@ -255,7 +259,7 @@ export default function Aboutmore() {
               data-aos-delay="150"
               className="text-[#fd5da2] font-semibold"
             >
-              If it truly benefits lives — we proudly stand behind it.
+              If it truly benefits lives - we proudly stand behind it.
             </p>
 
           </div>

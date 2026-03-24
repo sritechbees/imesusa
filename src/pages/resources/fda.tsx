@@ -31,11 +31,7 @@ export default function FDACompliance() {
   ];
 
   return (
-    <section className="relative bg-[#070b14] py-24 px-4 sm:px-6 overflow-hidden">
-
-      {/* Background Glow */}
-      <div className="absolute top-0 left-0 w-[400px] h-[400px] bg-[#fd5da2]/20 blur-[120px] rounded-full"></div>
-      <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-pink-500/20 blur-[120px] rounded-full"></div>
+    <section className="relative bg-slate-950 py-24 px-4 sm:px-6 overflow-hidden">
 
       <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center relative z-10">
 
@@ -52,7 +48,7 @@ export default function FDACompliance() {
           <h2
             data-aos="fade-up"
             data-aos-delay="200"
-            className="text-4xl md:text-5xl font-bold text-white mb-6"
+            className="text-3xl md:text-4xl font-bold text-white mb-6"
           >
             FDA & Compliance
           </h2>

@@ -22,12 +22,12 @@ export default function OurPhilosophy() {
     {
       title: "Be Safe",
       desc: "Safety and regulatory awareness are essential when introducing advanced medical technologies.",
-      img: "/about/Be Meaningful.jpg",
+      img: "/about/Be safe.jpg",
     },
     {
       title: "Benefit Lives",
       desc: "Every innovation should ultimately improve people’s lives and healthcare outcomes.",
-      img: "/about/practical.jpg",
+      img: "/about/Benefit Lives.jpg",
     },
   ];
 

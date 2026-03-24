@@ -8,15 +8,15 @@ import DoctorTestimonials from './DoctorTestimonials'
 
 function viewresourse() {
   return (
-    <div>
-        <App_layout>
+     <App_layout>
+    <div className='py-16'>    
             <ProductVideos/>
             <DownloadBrochures/>
             <FDACompliance/>
             <TechnologyTimeline/>
-            <DoctorTestimonials/>
-        </App_layout>
+            <DoctorTestimonials/>    
     </div>
+     </App_layout>
   )
 }
 

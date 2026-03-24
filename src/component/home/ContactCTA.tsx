@@ -35,7 +35,7 @@ export function ContactCTA() {
 
         {/* CTA Buttons */}
         <div className="flex flex-col md:flex-row gap-6 justify-center">
-<Link href="/contact/getintouch">
+<Link href="/contact/contacthero/">
           <button className="px-8 py-3 bg-white text-pink-600 rounded-full font-semibold hover:scale-105 transition shadow-lg">
             Contact Us
           </button></Link>

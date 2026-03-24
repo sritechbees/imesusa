@@ -4,41 +4,49 @@ import Image from "next/image";
 
 export default function RemedOverview() {
   return (
-    <section className="bg-white py-24 px-6 md:px-16 font-[Poppins]">
+    <section className="bg-white dark:bg-slate-950 py-16 mt-20 md:py-2 px-4 sm:px-6 md:px-16">
 
-      <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
+      {/* 🔥 TOP CENTER TITLE */}
+      <div className="text-center max-w-3xl mx-auto mb-16">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold leading-tight">
+          <span className="text-gray-900 dark:text-white">
+            REMED
+          </span>{" "}
+          <span className="bg-gradient-to-r from-[#fd5da2] to-pink-400 bg-clip-text text-transparent">
+            NMS
+          </span>
+        </h2>
+
+        <p className="mt-6 text-gray-600 dark:text-gray-300 text-base sm:text-lg leading-relaxed">
+          Electromagnetic Stimulation System designed to provide deep,
+          clinically meaningful pain relief through non-invasive therapy.
+        </p>
+      </div>
+
+      {/* MAIN CONTENT */}
+      <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 md:gap-16 items-center">
 
         {/* LEFT CONTENT */}
         <div>
 
-          <h2 className="text-4xl md:text-5xl font-bold text-purple-700 mb-4">
-            REMED NMS
-          </h2>
-
-          <p className="text-lg text-gray-600 mb-6">
-            Electromagnetic Stimulation System designed to provide deep,
-            clinically meaningful pain relief through non-invasive therapy.
-          </p>
-
           {/* Tags */}
-          <div className="flex flex-wrap gap-3 mb-8">
-            <span className="px-4 py-2 border rounded-full text-purple-600 text-sm">
-              Non-Invasive
-            </span>
-            <span className="px-4 py-2 border rounded-full text-purple-600 text-sm">
-              No Medication
-            </span>
-            <span className="px-4 py-2 border rounded-full text-purple-600 text-sm">
-              No Downtime
-            </span>
+          <div className="flex flex-wrap gap-3 mb-8 justify-start">
+            {["Non-Invasive", "No Medication", "No Downtime"].map((tag, i) => (
+              <span
+                key={i}
+                className="px-4 py-2 border border-[#fd5da2] rounded-full text-[#fd5da2] text-xs sm:text-sm"
+              >
+                {tag}
+              </span>
+            ))}
           </div>
 
           {/* Conditions */}
-          <h3 className="text-xl font-semibold text-gray-900 mb-4">
+          <h3 className="text-lg sm:text-xl font-semibold text-gray-900 dark:text-white mb-4">
             Created for Chronic and Acute Pain Specialists
           </h3>
 
-          <ul className="space-y-3 text-gray-600">
+          <ul className="space-y-2 sm:space-y-3 text-gray-600 dark:text-gray-300 text-sm sm:text-base">
             <li>✔ Musculoskeletal pain</li>
             <li>✔ Spine & joint disorders</li>
             <li>✔ Sports injuries</li>
@@ -50,44 +58,67 @@ export default function RemedOverview() {
 
         {/* RIGHT IMAGE */}
         <div className="relative">
-
-          <div className="rounded-3xl overflow-hidden shadow-2xl">
+          <div className="rounded-3xl overflow-hidden shadow-xl">
             <Image
-              src="/about/technology_evaluation.jpg"
+              src="/product/benefits.jpeg"
               alt="REMED NMS Device"
               width={600}
               height={600}
-              className="w-full h-full object-cover"
+              className="w-full h-[260px] sm:h-[350px] md:h-full object-cover"
             />
           </div>
-
         </div>
 
       </div>
 
-      {/* Bottom Feature Section */}
-      <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-10 mt-20 text-center">
+      {/* 🔥 Bottom Feature Section */}
+      <div className="max-w-7xl mx-auto grid sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-10 mt-16 md:mt-20">
 
-        <div className="bg-gray-50 p-8 rounded-2xl shadow">
-          <h4 className="text-lg font-semibold mb-2">Quick Results</h4>
-          <p className="text-gray-600 text-sm">
-            Patients often experience meaningful relief rapidly after treatment.
-          </p>
-        </div>
+        {[
+          {
+            title: "Quick Results",
+            desc: "Patients often experience meaningful relief rapidly after treatment.",
+          },
+          {
+            title: "Deep Penetration",
+            desc: "Electromagnetic therapy reaches deep tissue for effective pain relief.",
+          },
+          {
+            title: "Seamless Integration",
+            desc: "Fits perfectly into modern pain practice workflows.",
+          },
+        ].map((item, i) => (
+          <div
+            key={i}
+            className="relative rounded-2xl overflow-hidden group border border-gray-200 dark:border-gray-700"
+          >
 
-        <div className="bg-gray-50 p-8 rounded-2xl shadow">
-          <h4 className="text-lg font-semibold mb-2">Deep Penetration</h4>
-          <p className="text-gray-600 text-sm">
-            Electromagnetic therapy reaches deep tissue for effective pain relief.
-          </p>
-        </div>
+            {/* Background */}
+            <div className="absolute inset-0 bg-white dark:bg-slate-900"></div>
 
-        <div className="bg-gray-50 p-8 rounded-2xl shadow">
-          <h4 className="text-lg font-semibold mb-2">Seamless Integration</h4>
-          <p className="text-gray-600 text-sm">
-            Fits perfectly into modern pain practice workflows.
-          </p>
-        </div>
+            {/* Gradient Hover */}
+            <div className="absolute inset-0 bg-gradient-to-r from-[#fd5da2] via-[#ff7eb3] to-white
+              transform scale-x-0 group-hover:scale-x-100 origin-left
+              transition-transform duration-500 ease-out z-0"
+            />
+
+            {/* Content */}
+            <div className="relative z-10 p-6 md:p-8 transition-colors duration-500
+              text-gray-800 dark:text-white group-hover:text-white"
+            >
+
+              <h4 className="text-lg md:text-xl font-semibold mb-2">
+                {item.title}
+              </h4>
+
+              <p className="text-sm md:text-base opacity-90">
+                {item.desc}
+              </p>
+
+            </div>
+
+          </div>
+        ))}
 
       </div>
 

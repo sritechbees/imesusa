@@ -38,7 +38,7 @@ export default function TechnologyTimeline() {
           {/* Vertical Line */}
           <div className="absolute left-4 top-0 w-[2px] h-full bg-gray-200"></div>
 
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-16">
+          <h2 className="text-4xl md:text-4xl font-bold text-gray-900 mb-16">
             Technology <span className="text-[#fd5da2]">Evolution</span>
           </h2>
 
@@ -91,7 +91,7 @@ export default function TechnologyTimeline() {
             >
 
               <Image
-                src="/timeline/main-image.jpg"
+                src="/about/product2.png"
                 alt="Technology Evolution"
                 width={600}
                 height={700}

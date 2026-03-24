@@ -41,18 +41,23 @@ export default function PainManagement() {
   const [active, setActive] = useState(0);
 
   return (
-    <section className="bg-white py-16 md:py-20">
+    <section className="bg-white py-20 md:py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* TITLE */}
         <motion.h2
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="text-2xl sm:text-3xl md:text-4xl font-bold text-center text-gray-900 mb-10 md:mb-14"
-        >
-          Pain Management Applications
-        </motion.h2>
+  initial={{ opacity: 0, y: 30 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.6 }}
+  className="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-10 md:mb-16"
+>
+  <span className="text-gray-900 dark:text-white">
+    Pain Management
+  </span>{" "}
+  <span className="bg-gradient-to-r from-[#fd5da2] to-pink-400 bg-clip-text text-transparent">
+    Applications
+  </span>
+</motion.h2>
 
         {/* FLEX CONTAINER */}
         <div className="flex flex-col lg:flex-row gap-10 lg:gap-16 items-center">

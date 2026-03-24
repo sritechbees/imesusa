@@ -5,12 +5,14 @@ import DoctorTestimonials from './DoctorTestimonials'
 
 function techoverview() {
   return (
-    <div>
-        <App_layout>
+          <App_layout>
+    <div className='mt-16'>
+  
             <TechnologyTimeline/>
             <DoctorTestimonials/>
-            </App_layout>
+          
     </div>
+      </App_layout>
   )
 }
 

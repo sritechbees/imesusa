@@ -25,7 +25,7 @@ export default function MissionSection() {
 
           <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900">
             Meaningful{" "}
-            <span className="text-[#fd5da2]">Medical Technology</span>
+            <span className="text-[#0B5ED7]">Medical Technology</span>
           </h2>
 
           <p className="text-gray-600 mb-4 leading-relaxed text-base">
@@ -66,7 +66,7 @@ export default function MissionSection() {
           {/* BUTTON */}
           <button
             onClick={() => setOpen(!open)}
-            className="mt-8 px-8 py-3 rounded-xl bg-[#fd5da2] text-white font-medium hover:bg-pink-600 transition duration-300 shadow-md hover:shadow-lg hover:scale-105"
+            className="mt-8 px-8 py-3 rounded-xl bg-[#0B5ED7] text-white font-medium hover:bg-[#003E91] transition duration-300 shadow-md hover:shadow-lg hover:scale-105"
           >
             {open ? "Show Less" : "Read More"}
           </button>
@@ -96,7 +96,7 @@ export default function MissionSection() {
           </div>
 
           {/* decorative glow */}
-          <div className="absolute -bottom-6 -left-6 w-28 h-28 bg-[#fd5da2]/20 blur-2xl rounded-full"></div>
+          <div className="absolute -bottom-6 -left-6 w-28 h-28 bg-[#0B5ED7]/20 blur-2xl rounded-full"></div>
 
         </motion.div>
 

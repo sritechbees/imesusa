@@ -15,7 +15,7 @@ export function OurCommitment() {
           transition={{ duration: 0.7 }}
           className="text-4xl md:text-4xl font-bold text-gray-900 mb-6"
         >
-          Our <span className="text-[#fd5da2]">Commitment</span>
+          Our <span className="text-[#0B5ED7]">Commitment</span>
         </motion.h2>
 
         {/* Description */}
@@ -39,11 +39,11 @@ export function OurCommitment() {
             initial={{ opacity: 0, y: 60 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="relative group overflow-hidden border border-[#fd5da2]/30 rounded-xl p-8 bg-white shadow-md hover:scale-105 transition duration-300"
+            className="relative group overflow-hidden border border-[#0B5ED7]/30 rounded-xl p-8 bg-white shadow-md hover:scale-105 transition duration-300"
           >
 
             {/* Gradient Hover Layer */}
-            <div className="absolute inset-0 bg-gradient-to-r from-[#fd5da2] to-white transform scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-500 ease-out z-0 rounded-xl" />
+            <div className="absolute inset-0 bg-gradient-to-r from-[#0B5ED7] to-white transform scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-500 ease-out z-0 rounded-xl" />
 
             {/* Content */}
             <div className="relative z-10">
@@ -64,11 +64,11 @@ export function OurCommitment() {
             initial={{ opacity: 0, y: 60 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}
-            className="relative group overflow-hidden border border-[#fd5da2]/30 rounded-xl p-8 bg-white shadow-md hover:scale-105 transition duration-300"
+            className="relative group overflow-hidden border border-[#0B5ED7]/30 rounded-xl p-8 bg-white shadow-md hover:scale-105 transition duration-300"
           >
 
             {/* Gradient Hover Layer */}
-            <div className="absolute inset-0 bg-gradient-to-r from-[#fd5da2] to-white transform scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-500 ease-out z-0 rounded-xl" />
+            <div className="absolute inset-0 bg-gradient-to-r from-[#0B5ED7] to-white transform scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-500 ease-out z-0 rounded-xl" />
 
             {/* Content */}
             <div className="relative z-10">

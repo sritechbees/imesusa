@@ -5,11 +5,11 @@ import Link from "next/link";
 
 export function ContactCTA() {
   return (
-    <section className="relative  bg-slate-950 text-gray-300 py-20 mb-10 text-white overflow-hidden">
+    <section className="relative bg-slate-950 text-gray-300 py-20 mb-10 text-white overflow-hidden">
 
       {/* Glow Effect */}
       <div className="absolute top-0 left-0 w-72 h-72 bg-white/20 blur-3xl rounded-full"></div>
-      <div className="absolute bottom-0 right-0 w-72 h-72 bg-purple-300/20 blur-3xl rounded-full"></div>
+      <div className="absolute bottom-0 right-0 w-72 h-72 bg-[#4FC3F7]/20 blur-3xl rounded-full"></div>
 
       <div className="max-w-6xl mx-auto px-6 text-center relative z-10">
 
@@ -26,7 +26,7 @@ export function ContactCTA() {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ delay: 0.3 }}
-          className="max-w-2xl mx-auto mb-10 text-pink-100"
+          className="max-w-2xl mx-auto mb-10 text-blue-100"
         >
           If you are interested in bringing innovative medical technologies to
           your clinic, hospital, or wellness center, our team would be happy to
@@ -35,14 +35,18 @@ export function ContactCTA() {
 
         {/* CTA Buttons */}
         <div className="flex flex-col md:flex-row gap-6 justify-center">
-<Link href="/contact/contacthero/">
-          <button className="px-8 py-3 bg-white text-pink-600 rounded-full font-semibold hover:scale-105 transition shadow-lg">
-            Contact Us
-          </button></Link>
-<Link href="/contact/inquiryform">
-          <button className="px-8 py-3 border border-white rounded-full hover:bg-white hover:text-pink-600 transition">
-            Request Information
-          </button></Link>
+
+          <Link href="/contact/contacthero/">
+            <button className="px-8 py-3 bg-white text-[#0B5ED7] rounded-full font-semibold hover:scale-105 transition shadow-lg">
+              Contact Us
+            </button>
+          </Link>
+
+          <Link href="/contact/inquiryform">
+            <button className="px-8 py-3 border border-white rounded-full hover:bg-white hover:text-[#0B5ED7] transition">
+              Request Information
+            </button>
+          </Link>
 
         </div>
 

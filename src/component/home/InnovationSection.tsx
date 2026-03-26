@@ -20,8 +20,8 @@ export default function KoreanInnovationBridge() {
       </div>
 
       {/* Glow Effects */}
-      <div className="absolute top-0 left-0 w-96 h-96 bg-[#fd5da2]/20 blur-3xl rounded-full animate-pulse"></div>
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-purple-500/20 blur-3xl rounded-full animate-pulse"></div>
+      <div className="absolute top-0 left-0 w-96 h-96 bg-[#0B5ED7]/20 blur-3xl rounded-full animate-pulse"></div>
+      <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#4FC3F7]/20 blur-3xl rounded-full animate-pulse"></div>
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
 
@@ -33,7 +33,7 @@ export default function KoreanInnovationBridge() {
           className="text-center mb-20"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            Korean Innovation <span className="text-[#fd5da2]">Bridge</span>
+            Korean Innovation <span className="text-[#0B5ED7]">Bridge</span>
           </h2>
 
           <p className="max-w-2xl mx-auto text-gray-400">
@@ -61,7 +61,7 @@ export default function KoreanInnovationBridge() {
             />
 
             {/* small glow */}
-            <div className="absolute -bottom-6 -left-6 w-24 h-24 bg-[#fd5da2]/40 blur-2xl rounded-full"></div>
+            <div className="absolute -bottom-6 -left-6 w-24 h-24 bg-[#0B5ED7]/40 blur-2xl rounded-full"></div>
           </motion.div>
 
           {/* TEXT */}
@@ -90,7 +90,7 @@ export default function KoreanInnovationBridge() {
             {/* Feature Cards */}
             <div className="grid grid-cols-2 gap-5 mt-8">
 
-              <div className="bg-white/5 backdrop-blur-xl border border-[#fd5da2]/20 rounded-xl p-4 hover:scale-105 hover:border-[#fd5da2] transition">
+              <div className="bg-white/5 backdrop-blur-xl border border-[#0B5ED7]/20 rounded-xl p-4 hover:scale-105 hover:border-[#0B5ED7] transition">
                 <h4 className="text-white font-semibold text-sm mb-1">
                   Advanced Innovation
                 </h4>
@@ -99,7 +99,7 @@ export default function KoreanInnovationBridge() {
                 </p>
               </div>
 
-              <div className="bg-white/5 backdrop-blur-xl border border-[#fd5da2]/20 rounded-xl p-4 hover:scale-105 hover:border-[#fd5da2] transition">
+              <div className="bg-white/5 backdrop-blur-xl border border-[#0B5ED7]/20 rounded-xl p-4 hover:scale-105 hover:border-[#0B5ED7] transition">
                 <h4 className="text-white font-semibold text-sm mb-1">
                   Clinical Value
                 </h4>
@@ -108,7 +108,7 @@ export default function KoreanInnovationBridge() {
                 </p>
               </div>
 
-              <div className="bg-white/5 backdrop-blur-xl border border-[#fd5da2]/20 rounded-xl p-4 hover:scale-105 hover:border-[#fd5da2] transition">
+              <div className="bg-white/5 backdrop-blur-xl border border-[#0B5ED7]/20 rounded-xl p-4 hover:scale-105 hover:border-[#0B5ED7] transition">
                 <h4 className="text-white font-semibold text-sm mb-1">
                   Practical Use
                 </h4>
@@ -117,7 +117,7 @@ export default function KoreanInnovationBridge() {
                 </p>
               </div>
 
-              <div className="bg-white/5 backdrop-blur-xl border border-[#fd5da2]/20 rounded-xl p-4 hover:scale-105 hover:border-[#fd5da2] transition">
+              <div className="bg-white/5 backdrop-blur-xl border border-[#0B5ED7]/20 rounded-xl p-4 hover:scale-105 hover:border-[#0B5ED7] transition">
                 <h4 className="text-white font-semibold text-sm mb-1">
                   Trusted Solutions
                 </h4>

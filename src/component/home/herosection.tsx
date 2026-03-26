@@ -99,13 +99,13 @@ export default function HeroSection() {
             >
 
               <Link href="/products/twoproductsection">
-                <button className="bg-[#fd5da2] hover:bg-pink-500 text-white px-8 py-3 rounded-full font-semibold transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-pink-500/40">
+                <button className="bg-[#0B5ED7] hover:bg-[#003E91] text-white px-8 py-3 rounded-full font-semibold transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-[#0B5ED7]/40">
                   Explore Products
                 </button>
               </Link>
 
               <Link href="/contact/inquiryform">
-                <button className="border border-white text-white px-8 py-3 rounded-full hover:bg-white hover:text-[#fd5da2] transition-all duration-300 hover:scale-105">
+                <button className="border border-white text-white px-8 py-3 rounded-full hover:bg-white hover:text-[#0B5ED7] transition-all duration-300 hover:scale-105">
                   Request Information
                 </button>
               </Link>
@@ -123,7 +123,7 @@ export default function HeroSection() {
             key={index}
             onClick={() => setCurrent(index)}
             className={`w-3 h-3 rounded-full transition ${
-              current === index ? "bg-[#fd5da2] scale-125" : "bg-gray-400"
+              current === index ? "bg-[#0B5ED7] scale-125" : "bg-gray-400"
             }`}
           />
         ))}

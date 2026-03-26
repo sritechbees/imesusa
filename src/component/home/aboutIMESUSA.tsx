@@ -25,12 +25,12 @@ export default function AboutIMESUSA() {
 
               About
 
-              <span className="ml-3 bg-gradient-to-r from-[#fd5da2] to-pink-400 bg-clip-text text-transparent">
+              <span className="ml-3 bg-gradient-to-r from-[#003E91] to-[#4FC3F7] bg-clip-text text-transparent">
                 iMESUSA
               </span>
 
               {/* Underline Decoration */}
-              <div className="absolute -bottom-2 left-0 w-24 h-[3px] bg-[#fd5da2] rounded-full"></div>
+              <div className="absolute -bottom-2 left-0 w-24 h-[3px] bg-[#0B5ED7] rounded-full"></div>
 
             </h1>
 
@@ -57,7 +57,7 @@ export default function AboutIMESUSA() {
           >
 
             {/* Glow Border */}
-            <div className="absolute -inset-1 bg-gradient-to-r from-[#fd5da2] to-pink-300 rounded-3xl blur opacity-30 group-hover:opacity-60 transition"></div>
+            <div className="absolute -inset-1 bg-gradient-to-r from-[#003E91] to-[#4FC3F7] rounded-3xl blur opacity-30 group-hover:opacity-60 transition"></div>
 
             <Image
               src="/about/Medical Technology.jpg"
@@ -82,7 +82,7 @@ export default function AboutIMESUSA() {
             className="flex-1 relative group"
           >
 
-            <div className="absolute -inset-1 bg-gradient-to-r from-[#fd5da2] to-pink-300 rounded-3xl blur opacity-30 group-hover:opacity-60 transition"></div>
+            <div className="absolute -inset-1 bg-gradient-to-r from-[#003E91] to-[#4FC3F7] rounded-3xl blur opacity-30 group-hover:opacity-60 transition"></div>
 
             <Image
               src="/about/mission-medical.jpg"
@@ -103,7 +103,7 @@ export default function AboutIMESUSA() {
           >
 
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-              Our <span className="text-[#fd5da2]">Mission</span>
+              Our <span className="text-[#0B5ED7]">Mission</span>
             </h2>
 
             <p className="text-gray-600 leading-relaxed mb-10">
@@ -115,7 +115,7 @@ export default function AboutIMESUSA() {
             {/* Cards */}
             <div className="grid gap-6">
 
-              <div className="bg-white shadow-lg border border-pink-100 p-6 rounded-xl hover:shadow-xl hover:-translate-y-1 transition duration-300">
+              <div className="bg-white shadow-lg border border-blue-100 p-6 rounded-xl hover:shadow-xl hover:-translate-y-1 transition duration-300">
                 <h4 className="text-gray-900 font-semibold mb-2">
                   Clinical Value
                 </h4>
@@ -125,7 +125,7 @@ export default function AboutIMESUSA() {
                 </p>
               </div>
 
-              <div className="bg-white shadow-lg border border-pink-100 p-6 rounded-xl hover:shadow-xl hover:-translate-y-1 transition duration-300">
+              <div className="bg-white shadow-lg border border-blue-100 p-6 rounded-xl hover:shadow-xl hover:-translate-y-1 transition duration-300">
                 <h4 className="text-gray-900 font-semibold mb-2">
                   Safety First
                 </h4>
@@ -135,7 +135,7 @@ export default function AboutIMESUSA() {
                 </p>
               </div>
 
-              <div className="bg-white shadow-lg border border-pink-100 p-6 rounded-xl hover:shadow-xl hover:-translate-y-1 transition duration-300">
+              <div className="bg-white shadow-lg border border-blue-100 p-6 rounded-xl hover:shadow-xl hover:-translate-y-1 transition duration-300">
                 <h4 className="text-gray-900 font-semibold mb-2">
                   Practical Innovation
                 </h4>

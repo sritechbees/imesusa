@@ -18,14 +18,14 @@ export default function Header() {
   ];
 
   return (
-    <header className="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-gray-200">
+    <header className="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-[#0B5ED7]/20">
 
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
 
         {/* Logo */}
         <Link href="/" className="flex items-center">
           <Image
-            src="/about/logo2.png"
+            src="/about/logoo.png"
             alt="iMESUSA Logo"
             width={170}
             height={70}
@@ -44,15 +44,15 @@ export default function Header() {
               className={`relative transition duration-300
               ${
                 pathname === link.href
-                  ? "text-[#fd5da2] font-semibold"
-                  : "hover:text-[#fd5da2]"
+                  ? "text-[#0B5ED7] font-semibold"
+                  : "hover:text-[#0B5ED7]"
               }`}
             >
               {link.name}
 
               {/* Active underline */}
               {pathname === link.href && (
-                <span className="absolute -bottom-2 left-0 w-full h-[2px] bg-[#fd5da2]"></span>
+                <span className="absolute -bottom-2 left-0 w-full h-[2px] bg-[#0B5ED7]"></span>
               )}
             </Link>
           ))}
@@ -64,8 +64,8 @@ export default function Header() {
           <Link
             href="/contact/inquiryform"
             className="relative px-6 py-2.5 rounded-lg font-semibold text-white 
-            bg-[#fd5da2] border border-[#fd5da2] overflow-hidden group 
-            transition-all duration-500 hover:text-[#fd5da2]"
+            bg-[#0B5ED7] border border-[#0B5ED7] overflow-hidden group 
+            transition-all duration-500 hover:text-[#0B5ED7]"
           >
 
             {/* Hover Background */}
@@ -84,16 +84,16 @@ export default function Header() {
           onClick={() => setMenuOpen(!menuOpen)}
           className="md:hidden flex flex-col gap-1.5"
         >
-          <span className="w-6 h-[2px] bg-gray-900"></span>
-          <span className="w-6 h-[2px] bg-gray-900"></span>
-          <span className="w-6 h-[2px] bg-gray-900"></span>
+          <span className="w-6 h-[2px] bg-[#003E91]"></span>
+          <span className="w-6 h-[2px] bg-[#003E91]"></span>
+          <span className="w-6 h-[2px] bg-[#003E91]"></span>
         </button>
 
       </div>
 
       {/* Mobile Menu */}
       <div
-        className={`md:hidden bg-white border-t border-gray-200 transition-all duration-500 overflow-hidden ${
+        className={`md:hidden bg-white border-t border-[#0B5ED7]/20 transition-all duration-500 overflow-hidden ${
           menuOpen ? "max-h-[400px]" : "max-h-0"
         }`}
       >
@@ -107,18 +107,17 @@ export default function Header() {
               onClick={() => setMenuOpen(false)}
               className={`transition duration-300  ${
                 pathname === link.href
-                  ? "text-[#fd5da2] font-semibold"
-                  : "hover:text-[#fd5da2]"
+                  ? "text-[#0B5ED7] font-semibold"
+                  : "hover:text-[#0B5ED7]"
               }`}
             >
               {link.name}
             </Link>
-           
           ))}
 
           <Link
             href="/contact/inquiryform"
-            className="mt-3 inline-block text-center max-sm:mr-36 px-5 py-2.5 rounded-xl font-semibold text-white bg-[#fd5da2]"
+            className="mt-3 inline-block text-center max-sm:mr-36 px-5 py-2.5 rounded-xl font-semibold text-white bg-[#0B5ED7]"
           >
             Inquiry
           </Link>

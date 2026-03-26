@@ -39,7 +39,7 @@ export default function OurPhilosophy() {
         {/* Title */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-4xl font-bold text-gray-900 mb-4">
-            Our <span className="text-[#fd5da2]">Philosophy</span>
+            Our <span className="text-[#0B5ED7]">Philosophy</span>
           </h2>
 
           <p className="max-w-2xl mx-auto text-gray-600">
@@ -84,15 +84,15 @@ export default function OurPhilosophy() {
                 {/* Dark Overlay */}
                 <div className="absolute inset-0 bg-black/40 group-hover:bg-black/30 transition"></div>
 
-                {/* Pink Overlay */}
-                <div className="absolute inset-0 bg-[#fd5da2]/0 group-hover:bg-[#fd5da2]/20 transition duration-500"></div>
+                {/* Blue Overlay */}
+                <div className="absolute inset-0 bg-[#0B5ED7]/0 group-hover:bg-[#0B5ED7]/20 transition duration-500"></div>
 
               </div>
 
               {/* Content */}
               <div className="bg-white p-6 border border-gray-100 shadow-lg">
 
-                <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-[#fd5da2] transition">
+                <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-[#0B5ED7] transition">
                   {item.title}
                 </h3>
 
@@ -110,7 +110,7 @@ export default function OurPhilosophy() {
 
         {/* Quote */}
         <div className="text-center mt-16">
-          <p className="text-xl italic text-[#fd5da2]">
+          <p className="text-xl italic text-[#0B5ED7]">
             "Technology should serve people - not the other way around."
           </p>
         </div>

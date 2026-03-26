@@ -20,7 +20,7 @@ export default function WhyIMES() {
         >
 
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-            Why <span className="text-[#fd5da2]">iMESUSA</span>
+            Why <span className="text-[#0B5ED7]">iMESUSA</span>
           </h2>
 
           <p className="text-gray-600 max-w-3xl mx-auto text-base md:text-lg leading-relaxed">
@@ -67,7 +67,7 @@ export default function WhyIMES() {
             className="group bg-white border border-gray-100 p-8 rounded-2xl shadow-md hover:shadow-xl hover:-translate-y-2 transition duration-300"
           >
 
-            <h3 className="text-xl font-semibold mb-4 text-gray-900 group-hover:text-[#fd5da2] transition">
+            <h3 className="text-xl font-semibold mb-4 text-gray-900 group-hover:text-[#0B5ED7] transition">
               Clinically Meaningful
             </h3>
 
@@ -87,7 +87,7 @@ export default function WhyIMES() {
             className="group bg-white border border-gray-100 p-8 rounded-2xl shadow-md hover:shadow-xl hover:-translate-y-2 transition duration-300"
           >
 
-            <h3 className="text-xl font-semibold mb-4 text-gray-900 group-hover:text-[#fd5da2] transition">
+            <h3 className="text-xl font-semibold mb-4 text-gray-900 group-hover:text-[#0B5ED7] transition">
               Practical & Compliant
             </h3>
 
@@ -107,7 +107,7 @@ export default function WhyIMES() {
             className="group bg-white border border-gray-100 p-8 rounded-2xl shadow-md hover:shadow-xl hover:-translate-y-2 transition duration-300"
           >
 
-            <h3 className="text-xl font-semibold mb-4 text-gray-900 group-hover:text-[#fd5da2] transition">
+            <h3 className="text-xl font-semibold mb-4 text-gray-900 group-hover:text-[#0B5ED7] transition">
               People First Technology
             </h3>
 

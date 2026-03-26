@@ -30,7 +30,7 @@ export default function Technologies() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-4xl font-bold text-gray-900 mb-4">
-            Technologies <span className="text-[#fd5da2]">We Introduce</span>
+            Technologies <span className="text-[#0B5ED7]">We Introduce</span>
           </h2>
 
           <p className="max-w-2xl mx-auto text-gray-500">
@@ -73,7 +73,7 @@ export default function Technologies() {
                 </p>
 
                 <Link href="/resources/resouceshero">
-                  <button className="px-6 py-2 bg-[#fd5da2] text-white rounded-full hover:bg-pink-700 transition">
+                  <button className="px-6 py-2 bg-[#0B5ED7] text-white rounded-full hover:bg-[#003E91] transition">
                     Learn More
                   </button>
                 </Link>

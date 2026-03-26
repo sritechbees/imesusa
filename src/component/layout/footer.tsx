@@ -56,7 +56,7 @@ export default function Footer() {
                 { name: "About Us", link: "/about/aboutsection" },
                 { name: "Products", link: "/products/twoproductsection" },
                 { name: "Resources", link: "/resources/resouceshero" },
-                { name: "Contact", link: "/contact/getintouch" },
+                { name: "Contact", link: "/contact/contacthero" },
               ].map((item, i) => (
                 <li key={i}>
                   <Link

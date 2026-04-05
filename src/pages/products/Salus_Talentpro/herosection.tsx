@@ -30,14 +30,14 @@ export default function HeroSection() {
 
         {/* 🔥 Background Image */}
         <div
-          className="absolute inset-0 bg-cover bg-center"
+          className="absolute inset-0"
           style={{
-            backgroundImage: "url('/about/product2.png')",
+            backgroundImage: "url('/about/image8.jpeg')",
           }}
         ></div>
 
         {/* 💖 Pink Overlay Theme */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#1a0b14]/90 via-[#1a0b14]/80 to-[#1a0b14]/90"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-[#1a0b14]/40 via-[#1a0b14]/30 to-[#1a0b14]/40"></div>
 
         {/* ✨ Content */}
         <motion.div
